@@ -2,7 +2,7 @@ import { useLoaderData } from "react-router-dom";
 import { useState , useEffect} from "react";
 
 export async function loader(){
-    const res = await fetch(`https://terabyte-vw3n.onrender.com/api/v1/user`, {
+    const res = await fetch("https://terabyte-vw3n.onrender.com/api/v1/user", {
         method: 'GET',
         credentials: 'include',
     });

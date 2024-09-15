@@ -28,7 +28,7 @@ export default function NsoNavbar() {
 
   const handleClick = () => {
     console.log('clicked');
-    window.open(`https://terabyte-vw3n.onrender.com/api/v1/auth/google`, '_self');
+    window.open("https://terabyte-vw3n.onrender.com/api/v1/auth/google", '_self');
   };
 
   const handleClick2 = async () => {
