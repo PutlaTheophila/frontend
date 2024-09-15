@@ -5,10 +5,7 @@ import { Link, useLoaderData } from 'react-router-dom';
 export async function loader() {
     const res = await fetch(`https://terabyte-vw3n.onrender.com/api/v1/tournaments`, {
         method: 'GET',
-        credentials: 'include',  // Required for cookies to be sent
-        headers: {
-          'Content-Type': 'application/json',
-        }
+        credentials: 'include'
     });
     const data = await res.json();
     const tournaments = data?.tournaments;
