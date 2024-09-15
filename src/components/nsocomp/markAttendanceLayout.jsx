@@ -4,7 +4,7 @@ import MarkAttendanceNavbar from "./markAttendanceNavbar";
 
 
 export async function loader(){
-    const res = await fetch(`https://terabyte-vw3n.onrender.com/api/v1/auth/coordinator`, {
+    const res = await fetch("https://terabyte-vw3n.onrender.com/api/v1/auth/coordinator", {
         method: 'GET',
         credentials: 'include',
     });

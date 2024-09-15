@@ -6,7 +6,7 @@ import { useState } from 'react';
 import { IoCloseSharp } from "react-icons/io5";
 
 export const loader = async () => {
-  const res = await fetch(`https://terabyte-vw3n.onrender.com/api/v1/auth`, {
+  const res = await fetch("https://terabyte-vw3n.onrender.com/api/v1/auth", {
     method: 'GET',
     credentials: 'include',
   });
