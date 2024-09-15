@@ -13,6 +13,7 @@ export const loader = async () => {
   const data = await res.json();
   console.log('loader running');
   if (!data?.data?.user) return null;
+  console.log(!data?.data?.user);
   return data?.data?.user;
 };
 
