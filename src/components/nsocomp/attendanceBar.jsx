@@ -3,8 +3,6 @@ import { NavLink, useLocation } from 'react-router-dom'
 import { Home, UserCheck, Users, BarChart, User } from 'lucide-react'
 
 export default function AttendanceNavbar() {
-  const location = useLocation()
-
   const buttonClass = ({ isActive }) => `
     p-3 rounded-md flex flex-col items-center justify-center
     transition-colors duration-200 ease-in-out cursor-pointer

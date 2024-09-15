@@ -31,29 +31,6 @@ export default function NsoNavbar() {
     window.open("https://terabyte-vw3n.onrender.com/api/v1/auth/google", '_self');
   };
 
-  const handleClick2 = async () => {
-    console.log('clicked');
-    const res = await fetch(`https://terabyte-vw3n.onrender.com/api/v1/attendance`, {
-      method: 'GET',
-      credentials: 'include',
-    });
-    const data = await res.json();
-    console.log(data);
-  };
-
-
-  const attendanceSubmit = async (id) =>{
-    console.log(id);
-    const res = await fetch(`https://terabyte-vw3n.onrender.com/api/v1/attendance/${id}`, {
-        method: 'POST',
-        credentials: 'include',
-    });
-    const data = await res.json();
-    const status = data.status
-    if(status === 'success') setAttendanceSuccess(!attendanceSuccess)      
-    console.log(data);
-    setAttendanceSuccess(!attendanceSuccess)
-  }
 
   const logoutUser = async () => {
     console.log('clicked');
