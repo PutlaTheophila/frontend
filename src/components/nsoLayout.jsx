@@ -13,7 +13,7 @@ export const loader = async () => {
             throw new Error('Failed to fetch user data');
         }
         const data = await res.json();
-        console.log('loader running');
+        console.log(data,'loader running');
         if (!data?.data?.user) return null;
         console.log(data?.data?.user);
         return data?.data?.user;
