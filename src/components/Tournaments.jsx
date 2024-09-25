@@ -3,7 +3,7 @@ import { CalendarDays, MapPin, Users, ChevronRight } from "lucide-react";
 import { Link, useLoaderData } from 'react-router-dom';
 
 export async function loader() {
-    const res = await fetch("https://terabyte-vw3n.onrender.com/api/v1/tournaments", {
+    const res = await fetch("https://terabyte-kvey.onrender.com/api/v1/tournaments", {
         method: 'GET',
         credentials: 'include'
     });

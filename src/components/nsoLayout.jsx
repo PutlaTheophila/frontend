@@ -4,7 +4,7 @@ import AttendanceNavbar from "./nsocomp/attendanceBar";
 
 
 export const loader = async () => {
-    const res = await fetch("https://terabyte-vw3n.onrender.com/api/v1/auth", {
+    const res = await fetch("https://terabyte-kvey.onrender.com/api/v1/auth", {
       method: 'GET',
       credentials: 'include',
     });

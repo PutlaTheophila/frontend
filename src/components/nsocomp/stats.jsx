@@ -5,7 +5,7 @@ export async function loader ({params}){
     const type  = params.groupType;
     const sport = params.sport;
     console.log(type , sport);
-    const res = await fetch(`https://terabyte-vw3n.onrender.com/api/v1/attendance/interiit/stats/${type}/${sport}`, {
+    const res = await fetch(`https://terabyte-kvey.onrender.com/api/v1/attendance/interiit/stats/${type}/${sport}`, {
         method: 'GET',
         credentials: 'include',
     });

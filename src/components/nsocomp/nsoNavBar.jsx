@@ -13,11 +13,7 @@ export const loader = async () => {
   const data = await res.json();
   console.log(data);
   if (!data?.data?.user) return null;
-  return data?.data?.user;
-  // console.log('loader running');
-
-  // console.log(data?.data?.user);
-  
+  return data?.data?.user;  
 };
 
 export default function NsoNavbar() {

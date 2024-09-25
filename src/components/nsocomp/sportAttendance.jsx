@@ -1,7 +1,7 @@
 import { useLoaderData } from "react-router-dom";
 
 export async function loader () {
-    const res = await fetch("https://terabyte-vw3n.onrender.com/api/v1/attendance/interiit/sportattendance", {
+    const res = await fetch("https://terabyte-kvey.onrender.com/api/v1/attendance/interiit/sportattendance", {
         method: 'GET',
         credentials: 'include',
     });

@@ -6,7 +6,7 @@ import { useState } from 'react';
 
 
 export async function loader(){
-    const res = await fetch(`https://terabyte-vw3n.onrender.com/api/v1/attendance/interiit`, {
+    const res = await fetch("https://terabyte-kvey.onrender.com/api/v1/attendance/interiit", {
         method: 'GET',
         credentials: 'include',
     });
