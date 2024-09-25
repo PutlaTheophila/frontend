@@ -6,7 +6,7 @@ import { useState } from 'react';
 import { IoCloseSharp } from "react-icons/io5";
 
 export const loader = async () => {
-  const res = await fetch("https://terabyte-vw3n.onrender.com/api/v1/auth", {
+  const res = await fetch("https://terabyte-kvey.onrender.com/api/v1/auth", {
     method: 'GET',
     credentials: 'include',
   });
@@ -28,13 +28,13 @@ export default function NsoNavbar() {
 
   const handleClick = () => {
     console.log('clicked');
-    window.open("https://terabyte-vw3n.onrender.com/api/v1/auth/google", '_self');
+    window.open("https://terabyte-kvey.onrender.com/api/v1/auth/google", '_self');
   };
 
 
   const logoutUser = async () => {
     console.log('clicked');
-    const res = await fetch('https://terabyte-vw3n.onrender.com/api/v1/auth', {
+    const res = await fetch('https://terabyte-kvey.onrender.com/api/v1/auth', {
       method: 'DELETE',
       credentials: 'include',
     });
