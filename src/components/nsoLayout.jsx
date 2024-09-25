@@ -8,8 +8,7 @@ export const loader = async () => {
       const res = await fetch("https://terabyte-lvkey.onrender.com/api/v1/auth", {
         method: 'GET',
         credentials: 'include',  // Include credentials for cookies or auth
-        headers: {
-          'Authorization': 'Bearer your-token-here',  // Add your token if needed
+        headers: { // Add your token if needed
           'Content-Type': 'application/json',         // Specify the content type
           // Add any other custom headers you need
         }
