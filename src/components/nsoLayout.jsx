@@ -13,7 +13,6 @@ export const loader = async () => {
     if (!data?.data?.user) return null;
     console.log(data?.data?.user);
     return data?.data?.user;
-    // hello from
 };
 
 export default function NsoLayout (){
