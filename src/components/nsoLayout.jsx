@@ -8,6 +8,7 @@ export const loader = async () => {
       method: 'GET',
       credentials: 'include',
     });
+    // updated
     const data = await res.json();
     console.log('loader running');
     if (!data?.data?.user) return null;
