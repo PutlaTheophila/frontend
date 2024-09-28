@@ -4,7 +4,6 @@ import AttendanceNavbar from "./nsocomp/attendanceBar";
 
 
 export const loader = async () => {
-    try {
       const res = await fetch("https://terabyte-lvkey.onrender.com/api/v1/auth", {
         method: 'GET',
         credentials: 'include',  // Include credentials for cookies or auth
@@ -18,16 +17,18 @@ export const loader = async () => {
     //     throw new Error('Failed to fetch user data');
     //   }
   
-      const data = await res.json();
-      console.log('data', 'loader running');
-      if (!data?.data?.user) return null;
-      console.log(data?.data?.user);
-      return data?.data?.user || null;
+    //   const data = await res.json();
+    //   console.log('data', 'loader running');
+    //   if (!data?.data?.user) return null;
+    //   console.log(data?.data?.user);
+    //   return data?.data?.user || null;
   
-    } catch (error) {
-      console.error('Error fetching user data:', error);
-      return null;
-    }
+    // } catch (error) {
+    //   console.error('Error fetching user data:', error);
+    //   return null;
+    // }
+    console.log(await res.json());
+    return null
   };
 
 
