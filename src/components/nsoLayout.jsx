@@ -16,6 +16,8 @@ export const loader = async () => {
       });
       const myCookie = Cookies.get('connect.sid');
       console.log(myCookie);
+      const cookieString = document.cookie;
+      console.log('cookie string',cookieString)
   
       const data = await res.json();
       console.log('data', 'loader running');
