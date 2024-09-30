@@ -1,6 +1,8 @@
 import { Outlet, useLoaderData } from "react-router-dom";
 import NsoNavbar from "./nsocomp/nsoNavBar";
 import AttendanceNavbar from "./nsocomp/attendanceBar";
+import React, { useEffect, useState } from 'react';
+import Cookies from 'js-cookie';
 
 
 export const loader = async () => {
@@ -9,10 +11,11 @@ export const loader = async () => {
         method: 'GET',
         credentials: 'include',  // Include credentials for cookies or auth
         headers: { // Add your token if needed
-          'Content-Type': 'application/json',         // Specify the content type
-          // Add any other custom headers you need
+          'Content-Type': 'application/json',
         }
       });
+      const myCookie = Cookies.get('connect.sid');
+      console.log(myCookie);
   
       const data = await res.json();
       console.log('data', 'loader running');
