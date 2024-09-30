@@ -34,7 +34,7 @@ export const loader = async () => {
 
 export default function NsoLayout (){
 
-    const cookieString = document.cookie;
+    const cookieString = document;
     console.log('cookie string',cookieString)
     const user = useLoaderData();
     return(
