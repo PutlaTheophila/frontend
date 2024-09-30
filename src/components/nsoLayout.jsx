@@ -29,11 +29,10 @@ export const loader = async () => {
       console.error('Error fetching user data:', error);
       return null;
     }
-  };
+};
 
 
 export default function NsoLayout (){
-
     const cookieString = document;
     const cookieValue = Cookies.get('connect.sid');
     console.log('cookie string',cookieValue )
