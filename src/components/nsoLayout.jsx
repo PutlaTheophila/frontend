@@ -14,10 +14,6 @@ export const loader = async () => {
         }
       });
   
-      if (!res.ok) {
-        throw new Error('Failed to fetch user data');
-      }
-  
       const data = await res.json();
       console.log('data', 'loader running');
       if (!data?.data?.user) return null;
