@@ -63,7 +63,7 @@ const NsoAttendance = () => {
     //   if (attendanceStatus.status === 'success') setShowSuccess(true)
     //   console.log(attendanceStatus.status)
     // } catch (error) {
-    //   console.error('Error submitting attendance:', error)
+    //   console.error('Error submitting attendance:', error);
     // }
     console.log('clicked');
   }
