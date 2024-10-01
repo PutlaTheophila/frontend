@@ -2,7 +2,7 @@ import { Outlet, useLoaderData } from "react-router-dom";
 import NsoNavbar from "./nsocomp/nsoNavBar";
 import AttendanceNavbar from "./nsocomp/attendanceBar";
 import React, { useEffect, useState } from 'react';
-import Cookies from 'js-cookie';
+// import Cookies from 'js-cookie';
 import { Cookies } from 'react-cookie';
 
 
