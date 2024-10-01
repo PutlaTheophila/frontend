@@ -3,7 +3,7 @@ import NsoNavbar from "./nsocomp/nsoNavBar";
 import AttendanceNavbar from "./nsocomp/attendanceBar";
 import React, { useEffect, useState } from 'react';
 import Cookies from 'js-cookie';
-import { useCookies } from 'react-cookie';
+import { Cookies } from 'react-cookie';
 
 
 export const loader = async () => {
@@ -34,12 +34,14 @@ export const loader = async () => {
 
 
 export default function NsoLayout (){
+    const cookie = new Cookies();
     // const cookieString = document;
     // const cookieValue = Cookies.get('connect.sid');
     // console.log('cookie string',cookieValue )
     // console.log('cookie string',document.cookie)
-    const [cookies] = useCookies(['connect.sid']); 
-    console.log(cookies);
+    // const [cookies] = useCookies(['connect.sid']); 
+    token = cookie.get('connect.sid');
+    console.log(token);
     const user = useLoaderData();
     return(
         <>
