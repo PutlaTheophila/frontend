@@ -57,8 +57,14 @@ const Login = () => {
 
   const handleSuccess = (response) => {
     console.log('Google OAuth Success:', response);
-    // Save user info in state or context if necessary
-    navigate('/dashboard'); // Redirect to the dashboard on successful login
+    fetch("https://terabyte-lvkey.onrender.com/api/v1/auth/google/callback", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({ response }),
+      })
+    navigate('/dashboard'); 
   };
 
   const handleError = () => {

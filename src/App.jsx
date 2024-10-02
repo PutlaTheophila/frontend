@@ -54,6 +54,8 @@ const router = createBrowserRouter(
         <Route path="/council" loader={councilLoader} element={<Council/> } />
         <Route path = '/dashboard' element={<h1>hello from dash board</h1>}/>
         <Route path = '/login' element ={<h1>welcome to login page</h1>}/>
+        <Route path="/auth/callback" element={<OAuthCallback />} />
+
         <Route path="/nso" element={<NsoLayout/>}>
           <Route index element={<Nso/>}/>
           <Route path="/nso/mark-attendance" loader ={markAttendanceLayoutLoader} element={<MarkAttendanceLayout/>}>
