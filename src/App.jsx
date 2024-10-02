@@ -52,7 +52,7 @@ const router = createBrowserRouter(
         <Route path="/tournaments" loader={tournamentsLoader} element={<TournamentsPage/>}/>
         <Route path="/tournaments/:id" loader ={tournamentDetailsLoader} element={<TournamentDetailsPage/>}/>      
         <Route path="/council" loader={councilLoader} element={<Council/> } />
-        <Route path="/nso" loader={attendanceNavLoader} element={<NsoLayout/>}>
+        <Route path="/nso" element={<NsoLayout/>}>
           <Route index element={<Nso/>}/>
           <Route path="/nso/mark-attendance" loader ={markAttendanceLayoutLoader} element={<MarkAttendanceLayout/>}>
             <Route path="/nso/mark-attendance/nso-attendance" loader = {markNsoAttendanceLoader} element={<NsoAttendance/>}/>

@@ -9,10 +9,13 @@ import {
 } from "react-router-dom";
 import router from "./App.jsx";
 import "./index.css";
+import { CookieProvider } from 'react-cookie';
 
 
 ReactDOM.createRoot(document.getElementById("root")).render(
   <React.StrictMode>
-    <RouterProvider router={router} />
+    <GoogleOAuthProvider clientId={'672247062346-njl2dru7fevcitsg5romorjtaiv8qinp.apps.googleusercontent.com'}>
+      <RouterProvider router={router} />
+    </GoogleOAuthProvider>
   </React.StrictMode>
 );
