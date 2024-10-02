@@ -10,6 +10,7 @@ import {
 import router from "./App.jsx";
 import "./index.css";
 import { CookieProvider } from 'react-cookie';
+import { GoogleOAuthProvider } from '@react-oauth/google';
 
 
 ReactDOM.createRoot(document.getElementById("root")).render(

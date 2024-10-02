@@ -1,4 +1,5 @@
 import { Outlet, useLoaderData , Navigate } from "react-router-dom";
+import { useNavigate } from 'react-router-dom';
 import NsoNavbar from "./nsocomp/nsoNavBar";
 import AttendanceNavbar from "./nsocomp/attendanceBar";
 import React, { useEffect, useState } from 'react';
@@ -49,7 +50,7 @@ import { GoogleLogin } from '@react-oauth/google';
 // Login.js
 // import React from 'react';
 // import { GoogleLogin } from '@react-oauth/google';
-// import { useNavigate } from 'react-router-dom';
+
 
 const Login = () => {
   const navigate = useNavigate();
