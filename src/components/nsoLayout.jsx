@@ -80,6 +80,7 @@ import { GoogleLogin } from '@react-oauth/google';
 // };
 //
 // export default Login;
+//
 
 const Login = () => {
   const navigate = useNavigate();
@@ -94,8 +95,8 @@ const Login = () => {
       body: JSON.stringify({ response }),
     })
     navigate('/dashboard');
+    console.log(data);
   };
-
   const handleError = () => {
     console.log('Google OAuth Error');
   };
