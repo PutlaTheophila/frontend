@@ -85,9 +85,19 @@ import { GoogleLogin } from '@react-oauth/google';
 const Login = () => {
   const navigate = useNavigate();
 
-  const handleSuccess =  (response) => {
+  const handleSuccess =  async(response) => {
     console.log('Google OAuth Success:', response);
     console.log('hellooo');
+    const response = fetch("https://terabyte-lvkey.onrender.com/api/v1/auth/google/callback", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({ response }),
+        credentials: "include",
+      })
+    const data = await response.json();
+    console.log(data)
     navigate('/dashboard');
   };
   const handleError = () => {
