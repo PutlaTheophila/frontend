@@ -87,17 +87,6 @@ const Login = () => {
 
   const handleSuccess =  (response) => {
     console.log('Google OAuth Success:', response);
-    fetch("https://terabyte-lvkey.onrender.com/api/v1/auth/google/callback", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify({ response }),
-        credentials: "include",
-      })
-      .then(response => response.json())
-      .then(data => console.log(data))
-      .catch(error => console.error("Error:", error));
     navigate('/dashboard');
   };
   const handleError = () => {

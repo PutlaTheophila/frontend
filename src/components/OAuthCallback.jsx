@@ -19,10 +19,10 @@ const OAuthCallback = () => {
         .then((data) => {
           // Handle the token or user data response
           console.log("User data:", data);
+          console.log('hello');
         });
     }
-  }, [code]);
-
+  },[code]);
   return <div>Logging in...</div>;
 };
 

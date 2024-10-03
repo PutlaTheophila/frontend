@@ -9,7 +9,6 @@ import {
 } from "react-router-dom";
 import router from "./App.jsx";
 import "./index.css";
-import { CookieProvider } from 'react-cookie';
 import { GoogleOAuthProvider } from '@react-oauth/google';
 
 

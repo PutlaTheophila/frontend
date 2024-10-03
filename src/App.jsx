@@ -37,6 +37,7 @@ import HomeLayout from "./components/homepagecomp/homeLayout.jsx";
 import {loader as markNsoAttendanceLoader} from "./components/nsocomp/markNsoAttendance.jsx";
 import NsoAttendance from "./components/nsocomp/markNsoAttendance.jsx";
 import OAuthCallback from "./components/OAuthCallback.jsx";
+import { loader as loginLoader } from "./components/dashboard.jsx";
 
 
 const router = createBrowserRouter(
@@ -53,7 +54,7 @@ const router = createBrowserRouter(
         <Route path="/tournaments" loader={tournamentsLoader} element={<TournamentsPage/>}/>
         <Route path="/tournaments/:id" loader ={tournamentDetailsLoader} element={<TournamentDetailsPage/>}/>      
         <Route path="/council" loader={councilLoader} element={<Council/> } />
-        <Route path = '/dashboard' element={<h1>hello from dash board</h1>}/>
+        <Route path = '/dashboard' loader ={loginLoader} element={<h1>hello from dash board</h1>}/>
         <Route path = '/login' element ={<h1>welcome to login page</h1>}/>
         <Route path="/auth/callback" element={<OAuthCallback/>} />
 
