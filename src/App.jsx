@@ -36,6 +36,7 @@ import {loader as SportStatsLoader} from "./components/nsocomp/stats.jsx";
 import HomeLayout from "./components/homepagecomp/homeLayout.jsx";
 import {loader as markNsoAttendanceLoader} from "./components/nsocomp/markNsoAttendance.jsx";
 import NsoAttendance from "./components/nsocomp/markNsoAttendance.jsx";
+import OAuthCallback from "./components/OAuthCallback.jsx";
 
 
 const router = createBrowserRouter(
@@ -54,7 +55,7 @@ const router = createBrowserRouter(
         <Route path="/council" loader={councilLoader} element={<Council/> } />
         <Route path = '/dashboard' element={<h1>hello from dash board</h1>}/>
         <Route path = '/login' element ={<h1>welcome to login page</h1>}/>
-        <Route path="/auth/callback" element={<OAuthCallback />} />
+        <Route path="/auth/callback" element={<OAuthCallback/>} />
 
         <Route path="/nso" element={<NsoLayout/>}>
           <Route index element={<Nso/>}/>
