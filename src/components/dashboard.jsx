@@ -4,7 +4,7 @@ export async function loader ({params}) {
         headers: {
           "Content-Type": "application/json",
         },
-        body: JSON.stringify({ response }),
+        body: JSON.stringify({ res }),
         credentials: "include",
       })
     const data = await res.json();
