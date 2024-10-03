@@ -1,4 +1,4 @@
-export async function loader ({params}) {
+export async function loader () {
     const res = fetch("https://terabyte-lvkey.onrender.com/api/v1/auth/google/callback", {
         method: "POST",
         headers: {
