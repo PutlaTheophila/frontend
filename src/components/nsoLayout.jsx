@@ -47,55 +47,23 @@ import { GoogleLogin } from '@react-oauth/google';
 //     )
 // } 
 
-// Login.js
-// import React from 'react';
-// import { GoogleLogin } from '@react-oauth/google';
 
-
-// const Login = () => {
-//   const navigate = useNavigate();
-
-//   const handleSuccess = (response) => {
-//     console.log('Google OAuth Success:', response);
-//     fetch("https://terabyte-lvkey.onrender.com/api/v1/auth/google/callback", {
-//         method: "POST",
-//         headers: {
-//           "Content-Type": "application/json",
-//         },
-//         body: JSON.stringify({ response }),
-//       })
-//     navigate('/dashboard'); 
-//   };
-
-//   const handleError = () => {
-//     console.log('Google OAuth Error');
-//   };
-
-//   return (
-//     <div>
-//       <h1>Login</h1>
-//       <GoogleLogin onSuccess={handleSuccess} onError={handleError} />
-//     </div>
-//   );
-// };
-//
-// export default Login;
 
 
 const Login = () => {
   const navigate = useNavigate();
 
-  const handleSuccess =  async(response) => {
+  const handleSuccess =  async (response) => {
     console.log('Google OAuth Success:', response);
     console.log('hellooo');
-    const res = await fetch("https://terabyte-lvkey.onrender.com/api/v1/auth/google/callback", {
+    const res = await fetch("https://terabyte-lvkey.onrender.com/api/v1/auth", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
         },
         body: JSON.stringify({ response }),
         credentials: "include",
-      })
+    })
     const data = await res.json();
     console.log(data)
     navigate('/dashboard');
