@@ -93,7 +93,7 @@ const Login = () => {
           "Content-Type": "application/json",
         },
         body: JSON.stringify({ response }),
-        credentials: "include",  // Important for cookies
+        credentials: "include",  // Important for cookiess
       })
       .then(response => response.json())
       .then(data => console.log(data))
