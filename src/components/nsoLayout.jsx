@@ -80,7 +80,7 @@ import { GoogleLogin } from '@react-oauth/google';
 // };
 //
 // export default Login;
-//
+
 
 const Login = () => {
   const navigate = useNavigate();
@@ -93,7 +93,7 @@ const Login = () => {
           "Content-Type": "application/json",
         },
         body: JSON.stringify({ response }),
-        credentials: "include",  // Important for cookiess
+        credentials: "include",
       })
       .then(response => response.json())
       .then(data => console.log(data))
