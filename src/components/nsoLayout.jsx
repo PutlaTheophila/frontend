@@ -12,9 +12,9 @@ export async function loader() {
         credentials: 'include'
     });
     const data = await res.json();
-    if(data.status !== 'success'){
-        throw redirect('/login');
-    }
+    // if(data.status !== 'success'){
+    //     throw redirect('/login');
+    // }
     return data
 }
 
