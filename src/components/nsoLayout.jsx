@@ -3,9 +3,6 @@ import { useNavigate } from 'react-router-dom';
 import NsoNavbar from "./nsocomp/nsoNavBar";
 import AttendanceNavbar from "./nsocomp/attendanceBar";
 import React, { useEffect, useState } from 'react';
-import { GoogleLogin } from '@react-oauth/google';
-import { useCookies } from 'react-cookie';
-
 
 
 
@@ -20,9 +17,6 @@ export async function loader() {
     return data
 }
 
-
-
-//
 export default function NsoLayout (){
     const user = useLoaderData();
     console.log(user);
