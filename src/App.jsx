@@ -38,6 +38,7 @@ import {loader as markNsoAttendanceLoader} from "./components/nsocomp/markNsoAtt
 import NsoAttendance from "./components/nsocomp/markNsoAttendance.jsx";
 import OAuthCallback from "./components/OAuthCallback.jsx";
 import Login from "./components/login.jsx";
+import {loader as nsoLoader} from "./components/nsoLayout.jsx";
 
 
 const router = createBrowserRouter(
@@ -61,7 +62,7 @@ const router = createBrowserRouter(
         <Route path="/auth/callback" element={<OAuthCallback/>} />
 
 
-        <Route path="/nso" element={<NsoLayout/>}>
+        <Route path="/nso" loader={nsoLoader} element={<NsoLayout/>}>
           <Route index element={<Nso/>}/>
           <Route path="/nso/mark-attendance" loader ={markAttendanceLayoutLoader} element={<MarkAttendanceLayout/>}>
             <Route path="/nso/mark-attendance/nso-attendance" loader = {markNsoAttendanceLoader} element={<NsoAttendance/>}/>
