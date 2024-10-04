@@ -29,9 +29,9 @@ export async function loader() {
 export default function NsoLayout (){
     const user = useLoaderData();
     const [cookies] = useCookies(['authToken']);
+    console.log('all cookies' , useCookies());
     const authToken = getCookieValue('authToken');
     console.log('cookie provider' , authToken);
-    localStorage.setItem()
     console.log('from nso layout ',document.cookie);
     return(
         <>
