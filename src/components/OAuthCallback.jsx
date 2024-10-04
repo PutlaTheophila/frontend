@@ -7,7 +7,6 @@ const OAuthCallback = () => {
 
   useEffect(() => {
     if (code) {
-      // Send the code to your backend
       fetch("https://terabyte-lvkey.onrender.com/api/v1/auth/google/callback", {
         method: "POST",
         headers: {

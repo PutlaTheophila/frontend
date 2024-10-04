@@ -57,7 +57,7 @@ const Login = () => {
     console.log('Google OAuth Success:', response);
     console.log('hellooo');
     const credential = response.credential;
-    const res = await fetch("https://terabyte-kvey.onrender.com/api/v1/tournaments/auth", {
+    const res = await fetch("https://terabyte-kvey.onrender.com/api/v1/auth/google/callback", {
         method: 'POST',
         headers: {
           "Content-Type": "application/json",
