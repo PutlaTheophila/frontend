@@ -41,6 +41,7 @@ export const loader = async () => {
 
 export default function NsoLayout (){
     const user = useLoaderData();
+    console.log(data);
     return(
         <>
             {/* <NsoNavbar/> */}
