@@ -7,11 +7,6 @@ import { GoogleLogin } from '@react-oauth/google';
 import { useCookies } from 'react-cookie';
 
 
-const getCookieValue = (name) => {
-    const value = `; ${document.cookie}`;
-    const parts = value.split(`; ${name}=`);
-    if (parts.length === 2) return parts.pop().split(';').shift();
-};
 
 
 export async function loader() {
@@ -20,6 +15,8 @@ export async function loader() {
         credentials: 'include'
     });
     const data = await res.json();
+    if(data.status !== 'success')
+        throw redirect('/login')
     return data
 }
 
