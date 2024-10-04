@@ -31,7 +31,7 @@ export async function loader() {
 export default function NsoLayout (){
     const user = useLoaderData();
     const authToken = getCookieValue('authToken');
-    console.log('from nso layout ',authToken);
+    console.log('from nso layout ',document.cookie);
     return(
         <>
             {/* <NsoNavbar/> */}
