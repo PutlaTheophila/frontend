@@ -1,4 +1,4 @@
-import { Outlet, useLoaderData , Navigate } from "react-router-dom";
+import { Outlet, useLoaderData , Navigate, redirect } from "react-router-dom";
 import { useNavigate } from 'react-router-dom';
 import NsoNavbar from "./nsocomp/nsoNavBar";
 import AttendanceNavbar from "./nsocomp/attendanceBar";
@@ -24,6 +24,7 @@ export const loader = async () => {
         // Parse the JSON data
         const data = await res.json();
         console.log(data);
+        if(!data)  throw redirect ('/login')
 
         // Return the fetched data
         return data;
