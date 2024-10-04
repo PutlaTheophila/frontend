@@ -23,9 +23,11 @@ export const loader = async () => {
 
         // Parse the JSON data
         const data = await res.json();
+        console.log(data);
 
         // Return the fetched data
         return data;
+        
 
     } catch (error) {
         console.error("There was a problem with the fetch operation:", error);
