@@ -16,15 +16,8 @@ export async function loader() {
             }
         });
 
-        // Check if the response is okay (status in the range 200-299)
-        if (!res.ok) {
-            throw new Error(`Error: ${res.status} ${res.statusText}`);
-        }
-
         // Parse the JSON data
         const data = await res.json();
-        if(data.status !== 'success')
-            throw redirect('/login')
 
         // Return the fetched data
         return data;
@@ -34,6 +27,7 @@ export async function loader() {
         console.error("There was a problem with the fetch operation:", error);
         // Optionally, return an error response or throw the error
         throw redirect('/login'); // or return { error: error.message };
+        
 
     }
 };
@@ -42,7 +36,7 @@ export async function loader() {
 //
 export default function NsoLayout (){
     const user = useLoaderData();
-    console.log(user);
+    console.log('from nso layout ',user);
     return(
         <>
             {/* <NsoNavbar/> */}
