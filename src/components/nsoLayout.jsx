@@ -14,9 +14,8 @@ const getCookieValue = (name) => {
 
 
 export async function loader() {
-    const res = await fetch("https://terabyte-kvey.onrender.com/api/v1/auth", {
-        method: 'GET',
-        credentials: 'include'
+    const res = await axios.get("https://terabyte-kvey.onrender.com/api/v1/auth", {
+        withCredentials: true // Include credentials (cookies) in the request
     });
     const data = await res.json();
     // if(data.status !== 'success'){
