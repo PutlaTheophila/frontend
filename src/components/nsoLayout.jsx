@@ -23,7 +23,7 @@ export async function loader() {
 
         // Parse the JSON data
         const data = await res.json();
-        if(!data.status === 'success')
+        if(data.status !== 'success')
             throw redirect('/login')
 
         // Return the fetched data
