@@ -4,7 +4,7 @@ import NsoNavbar from "./nsocomp/nsoNavBar";
 import AttendanceNavbar from "./nsocomp/attendanceBar";
 import React, { useEffect, useState } from 'react';
 import { GoogleLogin } from '@react-oauth/google';
-import axios from "axios"
+import { useCookies } from 'react-cookie';
 
 
 const getCookieValue = (name) => {
@@ -15,13 +15,11 @@ const getCookieValue = (name) => {
 
 
 export async function loader() {
-    const res = await axios.get("https://terabyte-kvey.onrender.com/api/v1/auth", {
-        withCredentials: true // Include credentials (cookies) in the request
+    const res = await fetch("https://terabyte-kvey.onrender.com/api/v1/auth", {
+        method: 'GET',
+        credentials: 'include'
     });
     const data = await res.json();
-    // if(data.status !== 'success'){
-    //     throw redirect('/login');
-    // }
     return data
 }
 
@@ -30,7 +28,10 @@ export async function loader() {
 //
 export default function NsoLayout (){
     const user = useLoaderData();
+    const [cookies] = useCookies(['authToken']);
     const authToken = getCookieValue('authToken');
+    console.log('cookie provider' , authToken);
+    localStorage.setItem()
     console.log('from nso layout ',document.cookie);
     return(
         <>
