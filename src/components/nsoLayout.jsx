@@ -9,7 +9,7 @@ import { GoogleLogin } from '@react-oauth/google';
 export const loader = async () => {
     try {
         const res = await fetch("https://terabyte-lvkey.onrender.com/api/v1/auth/details", {
-            method: 'GET',
+            method: "GET",
             credentials: 'include', // Include credentials for cookies or auth
             headers: {
                 'Content-Type': 'application/json',
