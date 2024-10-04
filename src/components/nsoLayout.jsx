@@ -23,6 +23,7 @@ export const loader = async () => {
 
         // Parse the JSON data
         const data = await res.json();
+        if(!data) throw redirect('/login')
         console.log(data);
         if(!data)  throw redirect ('/login')
 
