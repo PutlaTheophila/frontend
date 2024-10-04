@@ -58,7 +58,7 @@ const router = createBrowserRouter(
 
 
         <Route path = '/dashboard'  element={<h1>hello from dash board</h1>}/>
-        <Route path = '/login' element ={<Login/>}/>
+        <Route path = '/login'  element ={<Login/>}/>
         <Route path="/auth/callback" element={<OAuthCallback/>} />
 
 
