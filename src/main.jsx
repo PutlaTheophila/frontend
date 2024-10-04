@@ -15,10 +15,12 @@ import { CookieProvider } from 'react-cookie';
 
 ReactDOM.createRoot(document.getElementById("root")).render(
   <React.StrictMode>
-    <CookieProvider>
+    
     <GoogleOAuthProvider clientId={'672247062346-njl2dru7fevcitsg5romorjtaiv8qinp.apps.googleusercontent.com'}>
+    <CookieProvider>
       <RouterProvider router={router} />
+      </CookieProvider>
     </GoogleOAuthProvider>
-    </CookieProvider>
+
   </React.StrictMode>
 );
