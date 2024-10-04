@@ -56,16 +56,17 @@ const Login = () => {
   const handleSuccess =  async (response) => {
     console.log('Google OAuth Success:', response);
     console.log('hellooo');
+    const credential = response.credential;
     const res = await fetch("https://terabyte-kvey.onrender.com/api/v1/tournaments/auth", {
         method: 'POST',
         headers: {
           "Content-Type": "application/json",
         },
-        body: JSON.stringify({ response }),
+        body: JSON.stringify({ response}),
         credentials: "include",
     })
     const data = await res.json();
-    console.log(data)
+    console.log('user',data)
     navigate('/dashboard');
   };
   const handleError = () => {
