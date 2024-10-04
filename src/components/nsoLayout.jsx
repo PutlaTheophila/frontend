@@ -41,7 +41,7 @@ export default function NsoLayout (){
     const user = useLoaderData();
     return(
         <>
-            <NsoNavbar/>
+            {/* <NsoNavbar/> */}
             <AttendanceNavbar/>                  
             <Outlet/>
         </>
