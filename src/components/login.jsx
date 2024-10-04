@@ -27,6 +27,8 @@ const Login = () => {
       console.log('user',data)
       navigate('/nso');
     };
+
+    
     const handleError = () => {
       console.log('Google OAuth Error');
     };

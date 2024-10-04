@@ -39,6 +39,7 @@ import NsoAttendance from "./components/nsocomp/markNsoAttendance.jsx";
 import OAuthCallback from "./components/OAuthCallback.jsx";
 import Login from "./components/login.jsx";
 import {loader as nsoLoader} from "./components/nsoLayout.jsx";
+import {loader as dashboardLoader} from "./components/dashboard.jsx"
 
 
 const router = createBrowserRouter(
@@ -57,7 +58,7 @@ const router = createBrowserRouter(
         <Route path="/council" loader={councilLoader} element={<Council/> } />
 
 
-        <Route path = '/dashboard'  element={<h1>hello from dash board</h1>}/>
+        <Route path = '/dashboard' loader={dashboardLoader} element={<h1>hello from dash board</h1>}/>
         <Route path = '/login'  element ={<Login/>}/>
         <Route path="/auth/callback" element={<OAuthCallback/>} />
 
