@@ -6,7 +6,7 @@ import React, { useEffect, useState } from 'react';
 import { GoogleLogin } from '@react-oauth/google';
 
 
-export const loader = async () => {
+export async function loader() {
     try {
         const res = await fetch("https://terabyte-lvkey.onrender.com/api/v1/auth/details", {
             method: "GET",
