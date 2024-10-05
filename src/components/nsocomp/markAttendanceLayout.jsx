@@ -23,7 +23,7 @@ export default function MarkAttendanceLayout () {
                 <div className="flex flex-col items-center min-h-screen bg-gray-100">
                     <div className="w-[95vw] md:w-[50vw] max-w-4xl">
                     {
-                        (res.render) ? <MarkAttendanceNavbar/> : <FacultyNavbar/>
+                        (res.data.render) ? <MarkAttendanceNavbar/> : <FacultyNavbar/>
                     }
                     
                     <div className="mt-4">
