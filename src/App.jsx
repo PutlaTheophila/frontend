@@ -22,7 +22,7 @@ import TournamentsPage from "./components/Tournaments.jsx";
 import {loader as  tournamentsLoader } from "./components/Tournaments.jsx";
 import NsoLayout from "./components/nsoLayout.jsx";
 import MarkAttendanceLayout from "./components/nsocomp/markAttendanceLayout.jsx";
-import {loader as markAttendanceLayoutLoader} from "./components/nsocomp/markAttendanceLayout.jsx"
+// import {loader as markAttendanceLayoutLoader} from "./components/nsocomp/markAttendanceLayout.jsx"
 import InterIITAttendance from "./components/nsocomp/markInterIITAtendance.jsx"
 import {loader as InterIITAttendanceLoader} from './components/nsocomp/markInterIITAtendance.jsx'
 import PersonalAttendance from "./components/nsocomp/personalAttendance.jsx";
@@ -65,7 +65,7 @@ const router = createBrowserRouter(
 
         <Route path="/nso" loader={nsoLoader} element={<NsoLayout/>}>
           <Route index element={<Nso/>}/>
-          <Route path="/nso/mark-attendance" loader ={markAttendanceLayoutLoader} element={<MarkAttendanceLayout/>}>
+          <Route path="/nso/mark-attendance"  element={<MarkAttendanceLayout/>}>
             <Route path="/nso/mark-attendance/nso-attendance" loader = {markNsoAttendanceLoader} element={<NsoAttendance/>}/>
             <Route path="/nso/mark-attendance/interiit-attendance" loader={InterIITAttendanceLoader} element={<InterIITAttendance/>}/>
           </Route>
