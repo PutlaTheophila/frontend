@@ -14,7 +14,7 @@ export async function loader() {
 
 export default function MarkAttendanceLayout () {
     const user = useLoaderData()
-    console.log(user);
+    console.log('user from navlayout ',user);
     return(
         <>
 
