@@ -1,7 +1,7 @@
 import { Outlet, useLoaderData } from "react-router-dom";
 
 import MarkAttendanceNavbar from "./markAttendanceNavbar";
-import {facultyLayout } from "./markAttendanceNavbar"
+import {FacultyNavbar } from "./markAttendanceNavbar"
 
 export async function loader() {
     const res = await fetch("https://terabyte-kvey.onrender.com/api/v1/attendance/interiit/mark-attendance-navbar", {
@@ -23,7 +23,7 @@ export default function MarkAttendanceLayout () {
                 <div className="flex flex-col items-center min-h-screen bg-gray-100">
                     <div className="w-[95vw] md:w-[50vw] max-w-4xl">
                     {
-                        (res.render) ? <MarkAttendanceNavbar/> : <facultyLayout/>
+                        (res.render) ? <MarkAttendanceNavbar/> : <FacultyNavbar/>
                     }
                     
                     <div className="mt-4">
