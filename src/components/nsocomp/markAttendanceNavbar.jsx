@@ -1,7 +1,7 @@
 import React from 'react'
 import { Trophy, Award } from 'lucide-react'
 
-export default function Navbar() {
+export default function StudentNavbar() {
   return (
     <nav className="w-full sm:w-[50vw] mx-auto mt-4 bg-gradient-to-r from-slate-800 to-slate-900 rounded-lg shadow-lg p-2">
       <div className="flex justify-between items-center">
