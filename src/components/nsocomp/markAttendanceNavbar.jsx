@@ -1,5 +1,6 @@
 import React from 'react'
-import { Trophy, Award } from 'lucide-react'
+import { Trophy, Award } from 'lucide-react';
+import { useState } from 'react';
 
 export default function StudentNavbar  () {
   const [isOpen, setIsOpen] = useState(false)
