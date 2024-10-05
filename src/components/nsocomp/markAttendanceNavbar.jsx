@@ -1,5 +1,6 @@
 import React from 'react'
-import { Trophy, Award } from 'lucide-react';
+import { Trophy, Award, X, ChevronRight } from 'lucide-react';
+import {Link} from "react-router-dom";
 import { useState } from 'react';
 
 export default function StudentNavbar  () {
