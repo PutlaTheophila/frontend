@@ -21,3 +21,17 @@ export default function Navbar() {
     </nav>
   )
 }
+
+
+export function Navbar() {
+  return (
+    <nav className="w-full sm:w-[50vw] mx-auto mt-4 bg-gradient-to-r from-slate-800 to-slate-900 rounded-lg shadow-lg p-2">
+      <div className="flex justify-center items-center">
+        <button className="flex items-center justify-center px-6 py-2 bg-slate-100 text-slate-800 rounded-full hover:bg-slate-200 transition-all duration-300 transform hover:scale-105 hover:shadow-md focus:outline-none focus:ring-2 focus:ring-slate-400">
+          <Award className="w-5 h-5 mr-2 text-emerald-500" />
+          <span className="font-semibold text-sm">Inter IIT</span>
+        </button>
+      </div>
+    </nav>
+  )
+}
