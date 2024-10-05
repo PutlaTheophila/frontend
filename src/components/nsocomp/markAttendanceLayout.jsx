@@ -13,29 +13,29 @@ export async function loader() {
 }
 
 
-export default function MarkAttendanceLayout () {
+export default function MarkAttendanceLayout() {
     const res = useLoaderData();
-    console.log('user from navlayout ',res);
-    return(
-        <>
+    console.log('user from navlayout ', res);
 
-            <>
-                <div className="flex flex-col items-center min-h-screen bg-gray-100">
-                    <div className="w-[95vw] md:w-[50vw] max-w-4xl">
+    return (
+        <>
+            <div className="flex flex-col items-center min-h-screen bg-gray-100">
+                <div className="w-[95vw] md:w-[50vw] max-w-4xl">
                     {
-                        (res.data.render) ? <MarkAttendanceNavbar/> : <FacultyNavbar/>
+                        // Pass `sports` array to `MarkAttendanceNavbar` and `FacultyNavbar`
+                        res.data.render
+                            ? <MarkAttendanceNavbar sports={res?.data?.coordinatorOf} /> // No spread here
+                            : <FacultyNavbar sports={res?.data?.coordinatorOf} /> // No spread here
                     }
-                    
+
                     <div className="mt-4">
-                        <Outlet/>
+                        <Outlet />
                     </div>
-                    </div>
-                </div> 
-            </>
-         
-            
+                </div>
+            </div>
         </>
-    )
+    );
 }
+
 
 
