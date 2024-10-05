@@ -2,14 +2,12 @@ import { useLoaderData } from "react-router-dom";
 import { useState , useEffect} from "react";
 
 export async function loader(){
-    const res = await fetch("https://terabyte-kvey.onrender.com/api/v1/user", {
+    const res = await fetch("https://terabyte-kvey.onrender.com/api/v1/attendance/interiit/post-attendance", {
         method: 'GET',
         credentials: 'include',
     });
     const data = await res.json();
-    const studentList = data.data
-
-    return studentList;
+    return data;
 }
 
 
@@ -35,6 +33,7 @@ const FloatingWindow = ({ message, onClose }) => {
 const InterIITAttendance = () => {
   const students = useLoaderData()
   console.log(students);
+  
   const [selectedStudents, setSelectedStudents] = useState([])
   const [showSuccess, setShowSuccess] = useState(false)
 
