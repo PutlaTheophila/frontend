@@ -4,6 +4,7 @@ import {Link} from "react-router-dom";
 import { useState } from 'react';
 
 export default function StudentNavbar  ({sportsList}) {
+  console.log('navbar',sportsList);
   const [isOpen, setIsOpen] = useState(false)
   const [selectedGroup, setSelectedGroup] = useState(null)
 
