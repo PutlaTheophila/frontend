@@ -3,13 +3,13 @@ import { Trophy, Award, X, ChevronRight } from 'lucide-react';
 import {Link} from "react-router-dom";
 import { useState } from 'react';
 
-export default function StudentNavbar  (params) {
-  console.log(params);
+export default function StudentNavbar  ({sportsList}) {
+  console.log('params',sportsList);
   const [isOpen, setIsOpen] = useState(false)
   const [selectedGroup, setSelectedGroup] = useState(null)
 
   const nsoSports = ['Badminton', 'Basketball', 'Athletics', 'Volleyball', 'Cricket', 'Football']
-  const interIITSports = ['Swimming', 'Tennis', 'Table Tennis', 'Weightlifting', 'Chess', 'Squash']
+  const interIITSports = [...sportsList];
 
   const openModal = (group) => {
     setSelectedGroup(group)

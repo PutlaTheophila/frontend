@@ -25,7 +25,7 @@ export default function MarkAttendanceLayout() {
                     {
                         // Pass `sports` array to `MarkAttendanceNavbar` and `FacultyNavbar`
                         res.data.render
-                            ? <MarkAttendanceNavbar sports={res?.data?.coordinatorSports
+                            ? <MarkAttendanceNavbar sportsList={res?.data?.coordinatorSports
                             } /> // No spread here
                             : <FacultyNavbar sportsList={res?.data?.coordinatorSports
                             } /> // No spread here
