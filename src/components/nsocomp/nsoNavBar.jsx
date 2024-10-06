@@ -12,8 +12,7 @@ export const loader = async () => {
   });
   const data = await res.json();
   console.log(data);
-  if (!data?.data?.user) return null;
-  return data?.data?.user;  
+  return data;
 };
 
 export default function NsoNavbar() {
@@ -26,21 +25,6 @@ export default function NsoNavbar() {
     setInputValue(event.target.value); // Update state with input value
   };
 
-  const handleClick = () => {
-    console.log('clicked');
-    window.open("https://terabyte-kvey.onrender.com/api/v1/auth/google", '_self');
-  };
-
-
-  const logoutUser = async () => {
-    console.log('clicked');
-    const res = await fetch('https://terabyte-kvey.onrender.com/api/v1/auth', {
-      method: 'DELETE',
-      credentials: 'include',
-    });
-    const data = await res.json();
-    console.log(data);
-  };
 
   return (
     <>
