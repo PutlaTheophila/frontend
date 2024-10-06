@@ -10,23 +10,10 @@ export async function loader ({params}) {
     return data;
 }
 
-
-
-import React from 'react';
-
 const StylishTable = () => {
     const data = useLoaderData();
     console.log(data);
-//   const attendanceData = [
-//     { id: 'A001', name: 'John Doe', attendance: 22 },
-//     { id: 'A002', name: 'Jane Smith', attendance: 18 },
-//     { id: 'A003', name: 'Bob Johnson', attendance: 15 },
-//     { id: 'A004', name: 'Alice Brown', attendance: 20 },
-//     { id: 'A005', name: 'Charlie Davis', attendance: 12 },
-//     { id: 'A006', name: 'Eva Wilson', attendance: 25 },
-//     { id: 'A007', name: 'Frank Miller', attendance: 8 },
-//     { id: 'A008', name: 'Grace Lee', attendance: 19 },
-//   ];
+
     const attendanceData = data;
   return (
     <div className='flex flex-col items-center min-h-screen bg-gray-100'>
@@ -72,7 +59,7 @@ const StylishTable = () => {
                         item.attendance > 10 ? 'bg-yellow-500 text-yellow-900' :
                         'bg-red-500 text-red-900'
                     }`}>
-                        {item.attendance} days
+                        {item.attendanceLength} days
                     </span>
                     </td>
                 </tr>
