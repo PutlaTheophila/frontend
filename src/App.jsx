@@ -68,7 +68,7 @@ const router = createBrowserRouter(
           <Route index element={<Nso/>}/>
           <Route path="/nso/mark-attendance" loader={markAttendanceLayoutLoader} element={<MarkAttendanceLayout/>}>
             <Route path="/nso/mark-attendance/nso-attendance" loader = {markNsoAttendanceLoader} element={<NsoAttendance/>}/>
-            <Route path="/nso/mark-attendance/interiit-attendance" loader={InterIITAttendanceLoader} element={<InterIITAttendance/>}/>
+            <Route path="/nso/mark-attendance/interiit-attendance/:sport" loader={InterIITAttendanceLoader} element={<InterIITAttendance/>}/>
           </Route>
           <Route path="/nso/personal-attendance" loader={personalAttendanceLoader} element = {<PersonalAttendance/>}/>
           <Route path='/nso/stats' element={<StatsLayout/>}>
