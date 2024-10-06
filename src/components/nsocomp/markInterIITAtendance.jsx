@@ -27,7 +27,7 @@ const FloatingWindow = ({ message, onClose }) => {
 
 const InterIITAttendance = () => {
   const students = useLoaderData()
-  console.log(students);
+  console.log('params sport ',students);
 
   const [selectedStudents, setSelectedStudents] = useState([])
   const [showSuccess, setShowSuccess] = useState(false)
