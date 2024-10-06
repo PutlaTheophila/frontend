@@ -84,7 +84,7 @@ const router = createBrowserRouter(
           </Route>
 
           <Route path='/nso/group' loader={sportAttendanceLayoutLoader} element={<SportAttendanceLayout/>}>
-            <Route path='/nso/group/:sport' element={<SportAttendance/>}/>
+            <Route path='/nso/group/:sport' loader={sportAttendanceLoader} element={<SportAttendance/>}/>
           </Route>
         </Route>
       </Route>
@@ -93,4 +93,4 @@ const router = createBrowserRouter(
 );
 
 export default router;
-//hello
+
