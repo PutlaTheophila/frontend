@@ -1,18 +1,18 @@
 import { useLoaderData } from "react-router-dom";
-import { useState , useEffect} from "react";
+import { useState, useEffect } from "react";
 
-
-export async function loader({params}) {
+export async function loader({ params }) {
   const sport = params?.sport;
   const res = await fetch(`https://terabyte-kvey.onrender.com/api/v1/attendance/interiit/players/${sport}`, {
-      method: 'GET',
-      credentials: 'include'
+    method: 'GET',
+    credentials: 'include'
   });
   const data = await res.json();
-  return data;
+  return {
+    data,
+    sport
+  };
 }
-
-
 
 const FloatingWindow = ({ message, onClose }) => {
   useEffect(() => {
@@ -33,25 +33,27 @@ const FloatingWindow = ({ message, onClose }) => {
 }
 
 const InterIITAttendance = () => {
-  const response = useLoaderData()
-  const students = response.players;
-  console.log('params sport ',response);
+  const response = useLoaderData();
+  const students = response.data.players;
+  const sport = response.sport;
+  console.log('params sport ', response);
 
-  const [selectedStudents, setSelectedStudents] = useState([])
-  const [showSuccess, setShowSuccess] = useState(false)
+  const [selectedStudents, setSelectedStudents] = useState([]);
+  const [showSuccess, setShowSuccess] = useState(false);
 
   const handleCheckboxChange = (student) => {
+    const studentWithSport = { ...student, sport }; // Include sport in the student object
     setSelectedStudents(prevSelected => {
       if (prevSelected.some(s => s.id === student.id)) {
-        return prevSelected.filter(s => s.id !== student.id)
+        return prevSelected.filter(s => s.id !== student.id);
       } else {
-        return [...prevSelected, student]
+        return [...prevSelected, studentWithSport]; // Add the student with sport
       }
-    })
+    });
   }
 
   const handleSubmit = async () => {
-    console.log('Selected students:', selectedStudents)
+    console.log('Selected students:', selectedStudents);
     try {
       const res = await fetch(`https://terabyte-vw3n.onrender.com/api/v1/attendance/interiit/`, {
         method: 'POST',
@@ -60,12 +62,12 @@ const InterIITAttendance = () => {
           'Content-Type': 'application/json',
         },
         body: JSON.stringify(selectedStudents),
-      })
-      const attendanceStatus = await res.json()
-      if (attendanceStatus.status === 'success') setShowSuccess(true)
-      console.log(attendanceStatus.status)
+      });
+      const attendanceStatus = await res.json();
+      if (attendanceStatus.status === 'success') setShowSuccess(true);
+      console.log(attendanceStatus.status);
     } catch (error) {
-      console.error('Error submitting attendance:', error)
+      console.error('Error submitting attendance:', error);
     }
   }
 
@@ -100,6 +102,7 @@ const InterIITAttendance = () => {
                     <li key={student.id} className="flex items-center justify-between p-2 bg-white rounded-md shadow-sm">
                       <span className="text-sm font-medium text-slate-800">{student.name}</span>
                       <span className="text-xs text-slate-500">ID: {student.id}</span>
+                      <span className="text-xs text-slate-500">Sport: {student.sport}</span> {/* Display sport */}
                     </li>
                   ))}
                 </ul>
@@ -123,7 +126,7 @@ const InterIITAttendance = () => {
         />
       )}
     </div>
-  )
+  );
 }
 
-export default InterIITAttendance
+export default InterIITAttendance;
