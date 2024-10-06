@@ -13,8 +13,6 @@ export async function loader(){
     const data = await res.json();
     const status = data?.status
     return data;
-
-
 }
 
 const AttendanceChart = (props) => {

@@ -29,8 +29,8 @@ import PersonalAttendanceLayout from "./components/nsocomp/personalAttendanceLay
 import {loader as PersonalAttendanceLayoutLoader} from "./components/nsocomp/personalAttendanceLayout.jsx"
 import StatsLayout from "./components/nsocomp/statsLayout.jsx";
 import StudentSportsDropdown from "./components/nsocomp/statsStudents.jsx";
-import SportAttendance from "./components/nsocomp/sportAttendance.jsx";
-import { loader as sportAttendanceLoader } from "./components/nsocomp/sportAttendance.jsx";
+import SportAttendance from "./components/nsocomp/groupAttendance.jsx";
+import { loader as sportAttendanceLoader } from "./components/nsocomp/groupAttendance.jsx";
 import SportStats from "./components/nsocomp/stats.jsx";
 import {loader as SportStatsLoader} from "./components/nsocomp/stats.jsx";
 import HomeLayout from "./components/homepagecomp/homeLayout.jsx";
@@ -43,6 +43,8 @@ import {loader as dashboardLoader} from "./components/dashboard.jsx";
 import {loader as markAttendanceLayoutLoader} from "./components/nsocomp/markAttendanceLayout.jsx"
 import {loader as personalInteriitAtendanceLoader} from "./components/nsocomp/personalnteriitAttendance.jsx";
 import PersonalInteriitAtendance from "./components/nsocomp/personalnteriitAttendance.jsx";
+import SportAttendanceLayout from "./components/nsocomp/groupAttendanceLayout.jsx";
+import {loader as sportAttendanceLayoutLoader} from "./components/nsocomp/groupAttendanceLayout.jsx";
 
 
 const router = createBrowserRouter(
@@ -80,7 +82,10 @@ const router = createBrowserRouter(
           <Route path='/nso/stats' element={<StatsLayout/>}>
             <Route path='/nso/stats/:groupType/:sport' loader={SportStatsLoader} element={<SportStats/>}/>
           </Route>
-          <Route path='/nso/group' loader={sportAttendanceLoader} element={<SportAttendance/>}/>
+
+          <Route path='/nso/group' loader={sportAttendanceLayoutLoader} element={<SportAttendanceLayout/>}>
+            <Route path='/nso/group/:sport' element={<SportAttendance/>}/>
+          </Route>
         </Route>
       </Route>
 
