@@ -41,6 +41,7 @@ import Login from "./components/login.jsx";
 import {loader as nsoLoader} from "./components/nsoLayout.jsx";
 import {loader as dashboardLoader} from "./components/dashboard.jsx";
 import {loader as markAttendanceLayoutLoader} from "./components/nsocomp/markAttendanceLayout.jsx"
+import {loader as personalInteriitAtendanceLoader} from "./components/nsocomp/personalnteriitAttendance.jsx";
 
 
 const router = createBrowserRouter(
@@ -71,8 +72,8 @@ const router = createBrowserRouter(
             <Route path="/nso/mark-attendance/interiit-attendance/:sport" loader={InterIITAttendanceLoader} element={<InterIITAttendance/>}/>
           </Route>
           <Route path="/nso/personal-attendance" loader={PersonalAttendanceLayoutLoader} element = {<PersonalAttendanceLayout/>}>
-            <Route path="/nso/personal-attendance/nso-attendance/:sport" element={<h1>hello from nso attendance</h1>}/>
-            <Route path="/nso/personal-attendance/interiit-attendance/:sport"  element={<h1>hello form inter iit attendance</h1>}/>
+            <Route path="/nso/personal-attendance/nso-attendance/:sport"element={<h1>hello from nso attendance</h1>}/>
+            <Route path="/nso/personal-attendance/interiit-attendance/:sport" loader={personalInteriitAtendanceLoader}  element={<h1>hello form inter iit attendance</h1>}/>
           </Route>
 
           <Route path='/nso/stats' element={<StatsLayout/>}>
