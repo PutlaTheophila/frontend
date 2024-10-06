@@ -108,7 +108,7 @@ const AttendanceChart = (props) => {
   
     export default function AttendanceCalander() {
       const data = useLoaderData();
-      console.log(data);
+      console.log('hello',data);
   
       const totalDays = data?.data?.totalDays;
       const playerAttendanceDays = data?.data?.player?.attendance;
