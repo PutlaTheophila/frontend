@@ -110,8 +110,11 @@ const AttendanceChart = (props) => {
   
     export default function AttendanceCalander() {
       const res = useLoaderData();
-      const totalDays = res.data.attendance;
-      const playerAttendanceDays = data?.data?.player?.attendance;  
+  
+      const totalDays = res?.data?.coordinatorAttendanceLength;
+      const playerAttendanceDays = res?.data?.attendance;
+
+  
       const today = new Date()
       const [currentMonth, setCurrentMonth] = useState(today.getMonth())
       const [currentYear, setCurrentYear] = useState(today.getFullYear())
