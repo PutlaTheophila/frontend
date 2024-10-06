@@ -11,10 +11,10 @@ export async function loader ({params}) {
 }
 
 const StylishTable = () => {
-    const data = useLoaderData();
+    const res = useLoaderData();
     console.log(data);
 
-    const attendanceData = data;
+    const attendanceData = res.data;
   return (
     <div className='flex flex-col items-center min-h-screen bg-gray-100'>
         <div className="w-[95vw] md:w-[50vw] mx-auto bg-slate-900 rounded-xl shadow-lg overflow-hidden mt-[30px] mb-[30px] font-titlefont">
