@@ -16,7 +16,7 @@ export async function loader() {
 export default function MarkAttendanceLayout() {
     const res = useLoaderData();
     console.log('user from navlayout ', res);
-    console.log(res.sports);
+    console.log(res?.sports);
 
     return (
         <>
@@ -24,10 +24,10 @@ export default function MarkAttendanceLayout() {
                 <div className="w-[95vw] md:w-[50vw] max-w-4xl">
                     {
                         // Pass `sports` array to `MarkAttendanceNavbar` and `FacultyNavbar`
-                        res.data.render
-                            ? <StudentNavbar sportsList={res?.data?.sports
+                        res.render
+                            ? <StudentNavbar sportsList={res?.sports
                             } /> // No spread here
-                            : <FacultyNavbar sportsList={res?.data?.sports
+                            : <FacultyNavbar sportsList={res?.sports
                             } /> // No spread here
                     }
 
