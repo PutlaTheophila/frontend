@@ -55,7 +55,7 @@ const InterIITAttendance = () => {
   const handleSubmit = async () => {
     console.log('Selected students:', selectedStudents);
     try {
-      const res = await fetch(`https://terabyte-kvey.onrender.com/api/v1/attendance/interiit/`, {
+      const res = await fetch(`https://terabyte-kvey.onrender.com/api/v1/attendance/interiit`, {
         method: 'POST',
         credentials: 'include',
         headers: {
