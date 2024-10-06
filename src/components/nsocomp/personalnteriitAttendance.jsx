@@ -114,7 +114,7 @@ const AttendanceChart = (props) => {
     //   const totalDays = res?.data?.coordinatorAttendanceLength;
     //   const playerAttendanceDays = res?.data?.attendance;
 
-      const totalDays = res?.data?.attendance;
+      const totalDays = res?.data?.coordinatorAttendance;
       const playerAttendanceDays = res?.data?.attendance;
 
 
