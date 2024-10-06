@@ -12,7 +12,6 @@ export async function loader ({params}) {
 
 const StylishTable = () => {
     const res = useLoaderData();
-    console.log(data);
 
     const attendanceData = res.data;
   return (
@@ -74,13 +73,3 @@ const StylishTable = () => {
 
 export default StylishTable;
 
-
-// const Component = () =>{
-//     <div className="flex flex-col items-center min-h-screen bg-gray-100">
-//     <div className="w-[95vw] md:w-[50vw] max-w-4xl">
-//     <StylishTable/>
-//     </div>
-// </div> 
-// }
-
-// export default Component;
