@@ -1,23 +1,15 @@
 import { useLoaderData } from "react-router-dom";
 
-export async function loader () {
-    const res = await fetch("https://terabyte-kvey.onrender.com/api/v1/attendance/interiit/sportattendance", {
+export async function loader ({params}) {
+    const sport = params.sport;
+    const res = await fetch(`https://terabyte-kvey.onrender.com/api/v1/attendance/interiit/sportattendance/${sport}`, {
         method: 'GET',
         credentials: 'include',
     });
     const data = await res.json();
-    const status = data?.status
-    console.log(data.data)
-    return data.data;
+    return data;
 }
 
-// export default function SportAttendance(){
-//     const data = useLoaderData();
-//     console.log(data);
-//     return(
-//         <h1>hello from sport attendance</h1>
-//     )
-// }
 
 
 import React from 'react';
