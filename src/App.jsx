@@ -25,8 +25,8 @@ import MarkAttendanceLayout from "./components/nsocomp/markAttendanceLayout.jsx"
 // import {loader as markAttendanceLayoutLoader} from "./components/nsocomp/markAttendanceLayout.jsx"
 import InterIITAttendance from "./components/nsocomp/markInterIITAtendance.jsx"
 import {loader as InterIITAttendanceLoader} from './components/nsocomp/markInterIITAtendance.jsx'
-import PersonalAttendance from "./components/nsocomp/personalAttendance.jsx";
-import {loader as personalAttendanceLoader} from "./components/nsocomp/personalAttendance.jsx"
+import PersonalAttendanceLayout from "./components/nsocomp/personalAttendanceLayout.jsx";
+import {loader as PersonalAttendanceLayoutLoader} from "./components/nsocomp/personalAttendanceLayout.jsx"
 import StatsLayout from "./components/nsocomp/statsLayout.jsx";
 import StudentSportsDropdown from "./components/nsocomp/statsStudents.jsx";
 import SportAttendance from "./components/nsocomp/sportAttendance.jsx";
@@ -70,7 +70,11 @@ const router = createBrowserRouter(
             <Route path="/nso/mark-attendance/nso-attendance" loader = {markNsoAttendanceLoader} element={<NsoAttendance/>}/>
             <Route path="/nso/mark-attendance/interiit-attendance/:sport" loader={InterIITAttendanceLoader} element={<InterIITAttendance/>}/>
           </Route>
-          <Route path="/nso/personal-attendance" loader={personalAttendanceLoader} element = {<PersonalAttendance/>}/>
+          <Route path="/nso/personal-attendance" loader={PersonalAttendanceLayoutLoader} element = {<PersonalAttendanceLayout/>}>
+            <Route path="/nso/personal-attendance/nso-attendance/:sport" element={<h1>hello from nso attendance</h1>}/>
+            <Route path="/nso/personal-attendance/interiit-attendance/:sport"  element={<h1>hello form inter iit attendance</h1>}/>
+          </Route>
+
           <Route path='/nso/stats' element={<StatsLayout/>}>
             <Route path='/nso/stats/:groupType/:sport' loader={SportStatsLoader} element={<SportStats/>}/>
           </Route>
