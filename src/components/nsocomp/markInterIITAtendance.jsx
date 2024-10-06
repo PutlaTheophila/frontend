@@ -1,8 +1,15 @@
 import { useLoaderData } from "react-router-dom";
 import { useState , useEffect} from "react";
 
-export async function loader({params}){
-  return params;
+
+export async function loader({params}) {
+  const sport = params?.sport;
+  const res = await fetch(`https://terabyte-kvey.onrender.com/api/v1/attendance/interiit/players/${sport}`, {
+      method: 'GET',
+      credentials: 'include'
+  });
+  const data = await res.json();
+  return data;
 }
 
 
