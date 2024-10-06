@@ -7,7 +7,7 @@ import { useState } from 'react';
 export async function loader({ params }) {
   const sport = params?.sport;
   console.log('sport from params', sport);
-  const res = await fetch(`https://terabyte-kvey.onrender.com/api/v1/attendance/interiit/${sport}`, {
+  const res = await fetch(`https://terabyte-kvey.onrender.com/api/v1/attendance/interiit/get-attendance/${sport}`, {
     method: 'GET',
     credentials: 'include'
   });
