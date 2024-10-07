@@ -39,33 +39,173 @@ import { loader as sportAttendanceLayoutLoader } from "./components/nsocomp/grou
 import { loader as sportAttendanceLoader } from "./components/nsocomp/groupAttendance.jsx";
 import { loader as nsoLoader } from "./components/nsoLayout.jsx";
 import { loader as dashboardLoader } from "./components/dashboard.jsx";
-// import LoadingFallback from "./components/LoadingFallbackLoader.jsx"
-const LoadingFallback = <div>Loading...</div>;
 
+// Loading fallback component
+const LoadingFallback = <div>Loading...</div>;
 
 const router = createBrowserRouter(
   createRoutesFromElements(
-    <Route path="/" element={<Suspense fallback={LoadingFallback}><HomeLayout /></Suspense>}>
-      <Route index element={<Suspense fallback={LoadingFallback}><HomePage /></Suspense>} />
-      <Route path="/events/:id" element={<Suspense fallback={LoadingFallback}><NewsDetails /></Suspense>} loader={newsDetailsLoader} />
-      <Route path="/events" loader={eventsLoader} element={<Suspense fallback={LoadingFallback}><Events /></Suspense>} />
-      <Route path="/tournaments" loader={tournamentsLoader} element={<Suspense fallback={LoadingFallback}><TournamentsPage /></Suspense>} />
-      <Route path="/tournaments/:id" loader={tournamentDetailsLoader} element={<Suspense fallback={LoadingFallback}><TournamentDetailsPage /></Suspense>} />
-      <Route path="/council" loader={councilLoader} element={<Suspense fallback={LoadingFallback}><Council /></Suspense>} />
-      <Route path="/nso" loader={nsoLoader} element={<Suspense fallback={LoadingFallback}><NsoLayout /></Suspense>}>
-        <Route index element={<Suspense fallback={LoadingFallback}><Nso /></Suspense>} />
-        <Route path="/nso/mark-attendance" loader={markAttendanceLayoutLoader} element={<Suspense fallback={LoadingFallback}><MarkAttendanceLayout /></Suspense>}>
-          <Route path="/nso/mark-attendance/nso-attendance" loader={markNsoAttendanceLoader} element={<Suspense fallback={LoadingFallback}><NsoAttendance /></Suspense>} />
-          <Route path="/nso/mark-attendance/interiit-attendance/:sport" loader={InterIITAttendanceLoader} element={<Suspense fallback={LoadingFallback}><InterIITAttendance /></Suspense>} />
+    <Route
+      path="/"
+      element={
+        <Suspense fallback={LoadingFallback}>
+          <HomeLayout />
+        </Suspense>
+      }
+    >
+      <Route
+        index
+        element={
+          <Suspense fallback={LoadingFallback}>
+            <HomePage />
+          </Suspense>
+        }
+      />
+      <Route
+        path="/events/:id"
+        element={
+          <Suspense fallback={LoadingFallback}>
+            <NewsDetails />
+          </Suspense>
+        }
+        loader={newsDetailsLoader}
+      />
+      <Route
+        path="/events"
+        loader={eventsLoader}
+        element={
+          <Suspense fallback={LoadingFallback}>
+            <Events />
+          </Suspense>
+        }
+      />
+      <Route
+        path="/tournaments"
+        loader={tournamentsLoader}
+        element={
+          <Suspense fallback={LoadingFallback}>
+            <TournamentsPage />
+          </Suspense>
+        }
+      />
+      <Route
+        path="/tournaments/:id"
+        loader={tournamentDetailsLoader}
+        element={
+          <Suspense fallback={LoadingFallback}>
+            <TournamentDetailsPage />
+          </Suspense>
+        }
+      />
+      <Route
+        path="/council"
+        loader={councilLoader}
+        element={
+          <Suspense fallback={LoadingFallback}>
+            <Council />
+          </Suspense>
+        }
+      />
+      <Route
+        path="/nso"
+        loader={nsoLoader}
+        element={
+          <Suspense fallback={LoadingFallback}>
+            <NsoLayout />
+          </Suspense>
+        }
+      >
+        <Route
+          index
+          element={
+            <Suspense fallback={LoadingFallback}>
+              <Nso />
+            </Suspense>
+          }
+        />
+        <Route
+          path="/nso/mark-attendance"
+          loader={markAttendanceLayoutLoader}
+          element={
+            <Suspense fallback={LoadingFallback}>
+              <MarkAttendanceLayout />
+            </Suspense>
+          }
+        >
+          <Route
+            path="/nso/mark-attendance/nso-attendance"
+            loader={markNsoAttendanceLoader}
+            element={
+              <Suspense fallback={LoadingFallback}>
+                <NsoAttendance />
+              </Suspense>
+            }
+          />
+          <Route
+            path="/nso/mark-attendance/interiit-attendance/:sport"
+            loader={InterIITAttendanceLoader}
+            element={
+              <Suspense fallback={LoadingFallback}>
+                <InterIITAttendance />
+              </Suspense>
+            }
+          />
         </Route>
-        <Route path="/nso/personal-attendance" loader={PersonalAttendanceLayoutLoader} element={<Suspense fallback={LoadingFallback}><PersonalAttendanceLayout /></Suspense>}>
-          <Route path="/nso/personal-attendance/interiit-attendance/:sport" loader={personalInteriitAtendanceLoader} element={<Suspense fallback={LoadingFallback}><PersonalInteriitAtendance /></Suspense>} />
+        <Route
+          path="/nso/personal-attendance"
+          loader={PersonalAttendanceLayoutLoader}
+          element={
+            <Suspense fallback={LoadingFallback}>
+              <PersonalAttendanceLayout />
+            </Suspense>
+          }
+        >
+          <Route
+            path="/nso/personal-attendance/interiit-attendance/:sport"
+            loader={personalInteriitAtendanceLoader}
+            element={
+              <Suspense fallback={LoadingFallback}>
+                <PersonalInteriitAtendance />
+              </Suspense>
+            }
+          />
         </Route>
-        <Route path="/nso/stats" element={<Suspense fallback={LoadingFallback}><StatsLayout /></Suspense>}>
-          <Route path="/nso/stats/:groupType/:sport" loader={SportStatsLoader} element={<Suspense fallback={LoadingFallback}><SportStats /></Suspense>} />
+        <Route
+          path="/nso/stats"
+          element={
+            <Suspense fallback={LoadingFallback}>
+              <StatsLayout />
+            </Suspense>
+          }
+        >
+          <Route
+            path="/nso/stats/:groupType/:sport"
+            loader={SportStatsLoader}
+            element={
+              <Suspense fallback={LoadingFallback}>
+                <SportStats />
+              </Suspense>
+            }
+          />
         </Route>
-        <Route path="/nso/group" loader={sportAttendanceLayoutLoader} element={<Suspense fallback={LoadingFallback}><SportAttendanceLayout /></Suspense>}>
-          <Route path="/nso/group/:sport" loader={sportAttendanceLoader} element={<Suspense fallback={LoadingFallback}><SportAttendance /></Suspense>} />
+        <Route
+          path="/nso/group"
+          loader={sportAttendanceLayoutLoader}
+          element={
+            <Suspense fallback={LoadingFallback}>
+              <SportAttendanceLayout />
+            </Suspense>
+          }
+        >
+          <Route
+            path="/nso/group/:sport"
+            loader={sportAttendanceLoader}
+            element={
+              <Suspense fallback={LoadingFallback}>
+                <SportAttendance />
+              </Suspense>
+            }
+          />
         </Route>
       </Route>
     </Route>
