@@ -11,15 +11,16 @@ import router from "./App.jsx";
 import "./index.css";
 import { GoogleOAuthProvider } from '@react-oauth/google';
 import { CookiesProvider } from 'react-cookie';
+import React, { Suspense } from 'react';
 
 
 ReactDOM.createRoot(document.getElementById("root")).render(
   <React.StrictMode>
     
     <GoogleOAuthProvider clientId={'672247062346-njl2dru7fevcitsg5romorjtaiv8qinp.apps.googleusercontent.com'}>
-    <CookiesProvider>
+    <Suspense fallback={<LoadingFallback />}>
       <RouterProvider router={router} />
-      </CookiesProvider>
+      </Suspense>
     </GoogleOAuthProvider>
 
   </React.StrictMode>
