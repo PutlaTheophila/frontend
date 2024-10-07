@@ -189,17 +189,27 @@ export default function AttendanceCalander() {
           <div key={`empty-${index}`} />
         ))}
         {Array.from({ length: daysInMonth }).map((_, dayIndex) => {
-          const day = dayIndex + 1;
-          const date = new Date(currentYear, currentMonth, day);
-          const isBordered = isDateBordered(date);
-          const isFilled = isDateFilled(date);
-          const borderClass = isBordered ? 'border-2 border-yellow-400' : '';
-          const fillClass = isFilled ? 'bg-yellow-400' : 'bg-slate-800';
-          return (
-            <div key={day} className={`p-2 ${fillClass} ${borderClass} rounded-lg`}>
-              {day}
+        const day = dayIndex + 1;
+        const date = new Date(currentYear, currentMonth, day);
+        
+        const isBordered = isDateBordered(date); // Check if date is in bordered array
+        const isFilled = isDateFilled(date);     // Check if date is in filled array
+        const isToday = date.toDateString() === today.toDateString(); // Check if it's today
+
+        // Determine classes
+        const borderClass = isBordered ? 'border-2 border-yellow-400' : ''; // Always apply border if it's in bordered dates
+        const fillClass = isFilled ? 'bg-blue-500' : ''; // Fill if it's in filled dates
+        const todayClass = isToday && !isFilled ? 'bg-slate-700' : ''; // Apply a different background for today if not filled
+
+        return (
+            <div
+            key={day}
+            className={`p-2 rounded-full flex items-center justify-center transition-colors
+                ${borderClass} ${fillClass} ${todayClass} hover:bg-slate-800`}
+            >
+            <span className={`text-sm ${isFilled ? 'text-white' : ''}`}>{day}</span>
             </div>
-          );
+        );
         })}
       </div>
     </div>
