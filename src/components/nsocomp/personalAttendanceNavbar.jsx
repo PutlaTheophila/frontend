@@ -105,10 +105,6 @@ export default function StudentNavbar  ({sportsList}) {
 }
 
 
-import React, { useState } from 'react';
-import { Award, X, ChevronRight } from 'lucide-react';
-import { Link } from "react-router-dom";
-
 export function FacultyNavbar({ sportsList }) {
   const [isOpen, setIsOpen] = useState(false);
 
