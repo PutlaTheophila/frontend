@@ -6,7 +6,7 @@ const SportSelector = () => {
   const [isOpen, setIsOpen] = useState(false)
   const [selectedGroup, setSelectedGroup] = useState(null)
 
-  const studentSports = ['Badminton', 'Basketball', 'Athletics', 'Volleyball', 'Cricket', 'Football']
+  const studentSports = ['Badminton', 'Basketball', 'Athletics', 'Volleyball', 'Cricket', 'Football','table-tennis']
   const facultySports = ['Tennis', 'Golf', 'Yoga', 'Cycling']
 
   const openModal = (group) => {
