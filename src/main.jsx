@@ -12,6 +12,7 @@ import "./index.css";
 import { GoogleOAuthProvider } from '@react-oauth/google';
 import { CookiesProvider } from 'react-cookie';
 import React, { Suspense } from 'react';
+import LoadingFallback from "./components/LoadingFallbackLoader.jsx"
 
 
 ReactDOM.createRoot(document.getElementById("root")).render(
