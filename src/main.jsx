@@ -20,9 +20,8 @@ ReactDOM.createRoot(document.getElementById("root")).render(
   <React.StrictMode>
     
     <GoogleOAuthProvider clientId={'672247062346-njl2dru7fevcitsg5romorjtaiv8qinp.apps.googleusercontent.com'}>
-    <Suspense fallback={<div>Loading......</div>}>
+
       <RouterProvider router={router} />
-      </Suspense>
     </GoogleOAuthProvider>
 
   </React.StrictMode>
