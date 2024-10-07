@@ -58,7 +58,7 @@ const router = createBrowserRouter(
         />
         <Route path="/events" loader = {eventsLoader} element={<Events/>}/>
         <Route path='/events/id' element={<h1>hello from events details page</h1>}/>
-        <Route path="/tournaments" loader={tournamentsLoader} element={<TournamentsPage/>}/>
+        <Route path="/tournaments" loader={tournamentsLoader} element={<Suspense fallback={LoadingFallback}><TournamentsPage/></Suspense>}/>
         <Route path="/tournaments/:id" loader ={tournamentDetailsLoader} element={<TournamentDetailsPage/>}/>      
         <Route path="/council" loader={councilLoader} element={<Council/> } />
 
