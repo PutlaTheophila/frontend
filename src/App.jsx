@@ -39,9 +39,8 @@ import { loader as sportAttendanceLayoutLoader } from "./components/nsocomp/grou
 import { loader as sportAttendanceLoader } from "./components/nsocomp/groupAttendance.jsx";
 import { loader as nsoLoader } from "./components/nsoLayout.jsx";
 import { loader as dashboardLoader } from "./components/dashboard.jsx";
+import LoadingFallback from "./components/LoadingFallbackLoader.jsx"
 
-// Loading fallback component
-const LoadingFallback = <div>Loading...</div>;
 
 const router = createBrowserRouter(
   createRoutesFromElements(
