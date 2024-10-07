@@ -152,7 +152,7 @@ export function FacultyNavbar({ sportsList }) {
                 {interIITSports.map((sport) => (
                   <Link
                     key={sport}
-                    to={`/faculty/mark-attendance/interiit-attendance/${sport.toLowerCase().replace(/\s+/g, '-')}`}
+                    to={`/nso/mark-attendance/interiit-attendance/${sport.toLowerCase().replace(/\s+/g, '-')}`}
                     className="block w-full p-4 text-left text-slate-700 bg-slate-50 rounded-lg shadow-sm hover:bg-slate-100 focus:outline-none focus:ring-2 focus:ring-slate-400 focus:ring-opacity-50 transition-all duration-200 transform hover:scale-102 flex items-center justify-between group"
                     onClick={closeModal}
                   >
