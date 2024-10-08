@@ -97,8 +97,8 @@ const EnhancedPopup = ({ isOpen, onClose, title, message }) => {
         <EnhancedPopup
           isOpen={isPopupOpen}
           onClose={closePopup}
-          title="Error"
-          message="An error occurred while loading the data. Please try again later."
+          title="un-authorized"
+          message="you are not authorized to mark attendance"
         />
       </>
     );
