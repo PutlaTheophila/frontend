@@ -1,7 +1,8 @@
-import { Outlet, useLoaderData } from "react-router-dom";
+import { Outlet, useLoaderData ,useNavigate} from "react-router-dom";
 import React, { useState, useEffect } from 'react';
 import MarkAttendanceNavbar from "./markAttendanceNavbar";
 import { FacultyNavbar } from "./markAttendanceNavbar";
+import { X } from 'lucide-react';
 
 
 export async function loader() {
@@ -13,9 +14,17 @@ export async function loader() {
     return data;
 }
 
-const EnhancedPopup = ({ title, message }) => (
+const EnhancedPopup = ({ title, message, onClose }) => (
     <div className="fixed inset-0 z-50 flex items-center justify-center bg-gray-500 bg-opacity-75">
-        <div className="bg-white rounded-lg shadow-xl p-6 max-w-lg w-full">
+        <div className="bg-white rounded-lg shadow-xl p-6 max-w-lg w-full relative">
+            {/* Close Button */}
+            <button
+                className="absolute top-2 right-2 text-gray-400 hover:text-gray-600"
+                onClick={onClose}
+            >
+                <X className="h-6 w-6" />
+            </button>
+
             <div className="flex items-center justify-center">
                 <div className="flex items-center justify-center h-12 w-12 rounded-full bg-red-100">
                     <svg className="h-6 w-6 text-red-600" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
@@ -33,6 +42,7 @@ const EnhancedPopup = ({ title, message }) => (
 
 export default function MarkAttendanceLayout() {
     const res = useLoaderData();
+    const navigate = useNavigate();  // To navigate the user back
     const [isError, setIsError] = useState(false);
 
     useEffect(() => {
@@ -41,6 +51,11 @@ export default function MarkAttendanceLayout() {
             setIsError(true);
         }
     }, [res.status]);
+
+    // Function to close the popup and navigate back
+    const handleClosePopup = () => {
+        navigate(-1); // Navigate back to the previous route
+    };
 
     console.log('user from navlayout', res);
     console.log(res?.data?.coordinatorSports);
@@ -51,6 +66,7 @@ export default function MarkAttendanceLayout() {
             <EnhancedPopup
                 title="Unauthorized"
                 message="You are not authorized to mark attendance."
+                onClose={handleClosePopup}  // Handle popup close and navigation
             />
         );
     }
