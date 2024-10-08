@@ -88,9 +88,8 @@ const EnhancedPopup = ({ isOpen, onClose, title, message }) => {
             }
   
             <div className="mt-4">
-                {
-                    (!isPopupOpen) &&<Outlet />
-                }
+                    <Outlet />
+
             </div>
           </div>
         </div>
