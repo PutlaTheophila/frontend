@@ -76,7 +76,7 @@ export default function MarkAttendanceLayout() {
             <div className="flex flex-col items-center min-h-screen bg-gray-100">
                 <div className="w-[95vw] md:w-[50vw] max-w-4xl">
                     {
-                        res.data.render
+                        res?.data?.render
                             ? <MarkAttendanceNavbar sportsList={res?.data?.coordinatorSports || []} />
                             : <FacultyNavbar sportsList={res?.data?.coordinatorSports || []} />
                     }
