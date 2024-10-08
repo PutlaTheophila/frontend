@@ -3,58 +3,59 @@ import { CalendarDays, MapPin, Users, ChevronRight } from "lucide-react";
 import { Link, useLoaderData } from 'react-router-dom';
 
 export async function loader() {
-    const res = await fetch("https://terabyte-kvey.onrender.com/api/v1/tournaments", {
-        method: 'GET',
-        credentials: 'include'
-    });
-    const data = await res.json();
-    const tournaments = data?.tournaments;
-    return tournaments;
+    // const res = await fetch("https://terabyte-kvey.onrender.com/api/v1/tournaments", {
+    //     method: 'GET',
+    //     credentials: 'include'
+    // });
+    // const data = await res.json();
+    // const tournaments = data?.tournaments;
+    // return tournaments;
+    return "hello";
 }
 
 export default function TournamentsPage() {
     const tournamentsFetched = useLoaderData();
     console.log(tournamentsFetched);
-    const tournaments = [...tournamentsFetched]
+    // const tournaments = [...tournamentsFetched]
 
-  // const tournaments = [
-  //   {
-  //     id: 1,
-  //     name: "Inter-College Basketball Championship",
-  //     date: "2023-07-15",
-  //     location: "Main Sports Arena",
-  //     participants: 16,
-  //     sport: "Basketball",
-  //     status: "Upcoming"
-  //   },
-  //   {
-  //     id: 2,
-  //     name: "Annual Swimming Gala",
-  //     date: "2023-08-05",
-  //     location: "Olympic-size Pool",
-  //     participants: 50,
-  //     sport: "Swimming",
-  //     status: "Registration Open"
-  //   },
-  //   {
-  //     id: 3,
-  //     name: "Cross-Country Running Event",
-  //     date: "2023-09-10",
-  //     location: "College Grounds",
-  //     participants: 100,
-  //     sport: "Athletics",
-  //     status: "Registration Closed"
-  //   },
-  //   {
-  //     id: 4,
-  //     name: "Table Tennis Tournament",
-  //     date: "2023-07-30",
-  //     location: "Indoor Sports Complex",
-  //     participants: 32,
-  //     sport: "Table Tennis",
-  //     status: "Upcoming"
-  //   }
-  // ];
+  const tournaments = [
+    {
+      id: 1,
+      name: "Inter-College Basketball Championship",
+      date: "2023-07-15",
+      location: "Main Sports Arena",
+      participants: 16,
+      sport: "Basketball",
+      status: "Upcoming"
+    },
+    {
+      id: 2,
+      name: "Annual Swimming Gala",
+      date: "2023-08-05",
+      location: "Olympic-size Pool",
+      participants: 50,
+      sport: "Swimming",
+      status: "Registration Open"
+    },
+    {
+      id: 3,
+      name: "Cross-Country Running Event",
+      date: "2023-09-10",
+      location: "College Grounds",
+      participants: 100,
+      sport: "Athletics",
+      status: "Registration Closed"
+    },
+    {
+      id: 4,
+      name: "Table Tennis Tournament",
+      date: "2023-07-30",
+      location: "Indoor Sports Complex",
+      participants: 32,
+      sport: "Table Tennis",
+      status: "Upcoming"
+    }
+  ];
 
   return (
     <div className="min-h-screen bg-gray-100 font-titlefont">
