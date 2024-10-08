@@ -28,7 +28,7 @@ const Login = () => {
       navigate('/nso');
     };
 
-    
+
     const handleError = () => {
       console.log('Google OAuth Error');
     };
@@ -37,7 +37,7 @@ const Login = () => {
       <div className="min-h-screen bg-slate-100 flex flex-col justify-center items-center p-4">
         <div className="w-full max-w-md bg-white rounded-lg shadow-xl overflow-hidden">
           <div className="bg-slate-900 text-white py-4 px-6">
-            <h2 className="text-2xl font-bold text-center">Welcome to SportSync</h2>
+            <h2 className="text-2xl font-bold text-center">Welcome to Sports IIT BHILAI</h2>
           </div>
           <div className="p-6">
             <h1 className="text-xl font-semibold text-slate-900 mb-6 text-center">Login to Your Account</h1>
@@ -67,9 +67,9 @@ const Login = () => {
           </div>
         </div>
         <div className="mt-8 bg-white p-6 rounded-lg shadow-md w-full max-w-md">
-          <h3 className="text-lg font-semibold text-slate-900 mb-4">Popular Sports</h3>
+          <h3 className="text-lg font-semibold text-slate-900 mb-4">IIT Bhilai Sports</h3>
           <ul className="grid grid-cols-2 gap-2">
-            {['Football', 'Basketball', 'Tennis', 'Swimming', 'Athletics', 'Volleyball'].map((sport) => (
+            {['Football', 'Basketball', 'table-tennis', 'Swimming', 'Athletics', 'Volleyball','volleyball','badminton'].map((sport) => (
               <li key={sport} className="bg-slate-100 text-slate-800 px-3 py-2 rounded-md text-sm">
                 {sport}
               </li>
