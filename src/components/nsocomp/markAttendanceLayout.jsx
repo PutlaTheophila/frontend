@@ -82,8 +82,8 @@ const EnhancedPopup = ({ isOpen, onClose, title, message }) => {
             {
                 (res.status === '500') ? (setIsPopupOpen(!isPopupOpen)) : (
               res?.data?.render
-                ? <MarkAttendanceNavbar sportsList={res?.data?.coordinatorSports} />
-                : <FacultyNavbar sportsList={res?.data?.coordinatorSports} />
+                ? <MarkAttendanceNavbar sportsList={res?.data?.coordinatorSports || []} />
+                : <FacultyNavbar sportsList={res?.data?.coordinatorSports || []} />
                 )
             }
   
