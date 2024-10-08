@@ -40,9 +40,11 @@ export default function MarkAttendanceLayout() {
                             <StudentNavbar sportsList={sportsList} />
                         )
                     ) : (
-                        <div className="text-center mt-4 text-red-500">
-                            No sports data available.
-                        </div>
+                        res.render ? (
+                            <FacultyNavbar sportsList={sportsList} />
+                        ) : (
+                            <StudentNavbar sportsList={sportsList} />
+                        )
                     )}
 
                     <div className="mt-4">
