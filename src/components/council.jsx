@@ -16,7 +16,7 @@ export async function loader() {
           name: "Stephen Curry",
           image: "https://i.ibb.co/JKZrVJL/Gajanand-Kumawat.jpg",
           program: "Business Management",
-          slogan: "Be the best shooter.",
+          slogan: "Be the best shoote\r.",
         },
       ],
     },
