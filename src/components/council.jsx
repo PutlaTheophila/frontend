@@ -99,7 +99,7 @@ function Card({ sport, players }) {
     <div className="bg-white rounded-xl overflow-hidden shadow-lg transition-all duration-300 hover:shadow-2xl hover:scale-105 group">
       <div className="relative">
         <div className="absolute inset-0 bg-gradient-to-r from-slate-900 to-amber-900 opacity-70"></div>
-        <div className="p-6 relative">
+        <div className="p-6 relative flex items-center justify-center">
           <h2 className="text-2xl font-bold text-white">{sport}</h2>
         </div>
       </div>
