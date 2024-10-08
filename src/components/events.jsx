@@ -56,7 +56,7 @@ export default function Events() {
   return (
     <div className="bg-gradient-to-br from-blue-50 to-indigo-100 min-h-screen py-16 px-4 sm:px-6 lg:px-8">
       <div className="max-w-7xl mx-auto">
-        <h1 className="text-5xl font-extrabold text-center mb-12">
+        <h1 className="text-4xl font-extrabold text-center mb-12">
           <span className="bg-clip-text text-transparent bg-gradient-to-r from-slate-900 via-amber-600 to-slate-600">
             Sports Events
           </span>

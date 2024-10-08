@@ -79,7 +79,7 @@ export default function Council() {
   return (
     <div className="bg-gradient-to-br from-blue-50 to-indigo-100 min-h-screen py-16 px-4 sm:px-6 lg:px-8">
       <div className="max-w-7xl mx-auto">
-        <h1 className="text-5xl font-extrabold text-center mb-12">
+        <h1 className="text-4xl font-extrabold text-center mb-12">
           <span className="bg-clip-text text-transparent bg-gradient-to-r from-slate-900 via-amber-600 to-slate-600">
             Sports Council 2024-25
           </span>
@@ -96,7 +96,7 @@ export default function Council() {
 
 function Card({ sport, players }) {
   return (
-    <div className="bg-white rounded-xl overflow-hidden shadow-lg transition-all duration-300 hover:shadow-2xl hover:scale-105 group">
+    <div className="bg-white rounded-xl font-titlefont overflow-hidden shadow-lg transition-all duration-300 hover:shadow-2xl hover:scale-105 group">
       <div className="relative">
         <div className="absolute inset-0 bg-gradient-to-r from-slate-900 to-amber-900 opacity-70"></div>
         <div className="p-6 relative flex items-center justify-center">
