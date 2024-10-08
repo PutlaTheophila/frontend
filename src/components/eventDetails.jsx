@@ -60,7 +60,7 @@ export async function loader({ params }) {
     };
   
     return (
-      <div className="bg-gradient-to-br from-slate-300 via-slate-100 to-amber-100 min-h-screen py-16 px-4 sm:px-6 lg:px-8">
+      <div className="bg-gradient-to-br from-slate-00 via-slate-100 to-amber-100 min-h-screen py-16 px-4 sm:px-6 lg:px-8">
         <div className="max-w-5xl mx-auto">
           <div className="bg-white rounded-3xl shadow-2xl overflow-hidden">
             <div className="relative h-[28rem]">
