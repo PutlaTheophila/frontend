@@ -45,6 +45,8 @@ import {loader as personalInteriitAtendanceLoader} from "./components/nsocomp/pe
 import PersonalInteriitAtendance from "./components/nsocomp/personalnteriitAttendance.jsx";
 import SportAttendanceLayout from "./components/nsocomp/groupAttendanceLayout.jsx";
 import {loader as sportAttendanceLayoutLoader} from "./components/nsocomp/groupAttendanceLayout.jsx";
+import EventDetails from "./components/eventDetails.jsx";
+import {loader as eventDetailsLoader} from "./components/eventDetails.jsx";
 
 
 const router = createBrowserRouter(
@@ -57,7 +59,7 @@ const router = createBrowserRouter(
           loader ={newsDetailsLoader}
         />
         <Route path="/events" loader = {eventsLoader} element={<Events/>}/>
-        <Route path='/events/id' element={<h1>hello from events details page</h1>}/>
+        <Route path='/events/:id' loader={eventDetailsLoader} element={<EventDetails/>}/>
         <Route path="/tournaments" loader={tournamentsLoader} element={<TournamentsPage/>}/>
         <Route path="/tournaments/:id" loader ={tournamentDetailsLoader} element={<TournamentDetailsPage/>}/>      
         <Route path="/council" loader={councilLoader} element={<Council/> } />
