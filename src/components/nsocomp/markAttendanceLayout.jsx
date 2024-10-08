@@ -76,16 +76,21 @@ const EnhancedPopup = ({ isOpen, onClose, title, message }) => {
   
     return (
       <>
+
         <div className="flex flex-col items-center min-h-screen bg-gray-100">
           <div className="w-[95vw] md:w-[50vw] max-w-4xl">
             {
-              res.data.render
+                (res.status === '500') ? (setIsPopupOpen(!isPopupOpen)) : (
+              res?.data?.render
                 ? <MarkAttendanceNavbar sportsList={res?.data?.coordinatorSports} />
                 : <FacultyNavbar sportsList={res?.data?.coordinatorSports} />
+                )
             }
   
             <div className="mt-4">
-              <Outlet />
+                {
+                    (!isPopupOpen) &&<Outlet />
+                }
             </div>
           </div>
         </div>
