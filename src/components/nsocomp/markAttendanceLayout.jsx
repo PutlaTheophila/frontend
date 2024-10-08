@@ -3,6 +3,16 @@ import React, { useState, useEffect } from 'react';
 import MarkAttendanceNavbar from "./markAttendanceNavbar";
 import { FacultyNavbar } from "./markAttendanceNavbar";
 
+
+export async function loader() {
+    const res = await fetch("https://terabyte-kvey.onrender.com/api/v1/attendance/interiit/mark-attendance-navbar", {
+        method: 'GET',
+        credentials: 'include'
+    });
+    const data = await res.json();
+    return data;
+}
+
 const EnhancedPopup = ({ isOpen, onClose, title, message }) => {
     if (!isOpen) return null;
 
