@@ -1,6 +1,6 @@
 import React from 'react';
 import { useLoaderData } from 'react-router-dom';
-import { Trophy, Award, Users } from 'lucide-react';
+import { Trophy, Award, Users , Star, ChevronRight} from 'lucide-react';
 
 export async function loader() {
   const data = [
@@ -72,11 +72,29 @@ export async function loader() {
 
   await Promise.all(preloadPromises);
 
-  return data;
+  return {
+    featured: [
+      {
+        name: "Michael Jordan",
+        image: "https://i.pinimg.com/736x/22/9d/86/229d8667d47b15d20a9ad459ea2041e0.jpg",
+        role: "Honorary President",
+        sport: "Basketball",
+        quote: "Talent wins games, but teamwork and intelligence win championships.",
+      },
+      {
+        name: "Simone Biles",
+        image: "https://i.pinimg.com/736x/22/9d/86/229d8667d47b15d20a9ad459ea2041e0.jpg",
+        role: "Vice President",
+        sport: "Gymnastics",
+        quote: "I'm not the next Usain Bolt or Michael Phelps. I'm the first Simone Biles.",
+      }
+    ],
+    sports: data
+  };
 }
 
 export default function Council() {
-  const data = useLoaderData();
+  const { featured, sports } = useLoaderData();
   return (
     <div className="bg-gradient-to-br from-slate-100 to-slate-200 min-h-screen py-16 px-4 sm:px-6 lg:px-8">
       <div className="max-w-7xl mx-auto">
@@ -90,11 +108,42 @@ export default function Council() {
             Empowering athletes, fostering excellence, and promoting sportsmanship across our campus.
           </p>
         </header>
+
+        {/* Featured Members */}
+        <div className="grid gap-8 md:grid-cols-2 mb-16">
+          {featured.map((member, index) => (
+            <FeaturedCard key={index} {...member} />
+          ))}
+        </div>
+
+        <h2 className="text-3xl font-bold text-slate-800 mb-8 text-center">Sport Representatives</h2>
         <div className="grid gap-12 md:grid-cols-2 lg:grid-cols-3">
-          {data.map((sport, index) => (
+          {sports.map((sport, index) => (
             <Card key={index} {...sport} />
           ))}
         </div>
+      </div>
+    </div>
+  );
+}
+
+function FeaturedCard({ name, image, role, sport, quote }) {
+  return (
+    <div className="bg-white rounded-2xl overflow-hidden shadow-xl transition-all duration-300 hover:shadow-2xl group">
+      <div className="relative h-64">
+        <img src={image} alt={name} className="w-full h-full object-cover" />
+        <div className="absolute inset-0 bg-gradient-to-t from-slate-900 via-slate-900/70 to-transparent"></div>
+        <div className="absolute bottom-0 left-0 right-0 p-6 text-white">
+          <h3 className="text-2xl font-bold mb-1">{name}</h3>
+          <p className="text-amber-400 font-semibold mb-1">{role}</p>
+          <p className="text-slate-300">{sport}</p>
+        </div>
+      </div>
+      <div className="p-6">
+        <blockquote className="italic text-slate-600 mb-4">"{quote}"</blockquote>
+        <button className="text-amber-600 font-semibold group-hover:text-amber-700 transition-colors duration-300 flex items-center">
+          Learn More <ChevronRight className="w-4 h-4 ml-1 group-hover:translate-x-1 transition-transform duration-300" />
+        </button>
       </div>
     </div>
   );
