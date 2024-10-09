@@ -63,32 +63,15 @@ export async function loader({ params }) {
       <div className="bg-gradient-to-br from-slate-100 to-slate-200 min-h-screen py-16 px-4 sm:px-6 lg:px-8">
         <div className="max-w-5xl mx-auto">
           <div className="bg-white rounded-2xl shadow-xl overflow-hidden">
-            <div className="relative h-[28rem]">
+            <div className="relative h-[28rem] md:h-[32rem]">
               <img 
                 className="w-full h-full object-cover" 
                 src={event.images[currentImageIndex]} 
                 alt={`${event.title} - Image ${currentImageIndex + 1}`}
               />
-              <div className="absolute inset-0 bg-gradient-to-t from-slate-900 via-slate-900/70 to-transparent"></div>
+              <div className="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-slate-900/80"></div>
               <div className="absolute top-4 left-4 bg-amber-500 text-white text-sm font-bold px-4 py-2 rounded-full shadow-lg">
                 {event.sport}
-              </div>
-              <div className="absolute bottom-8 left-8 right-8">
-                <h1 className="text-4xl font-bold text-white mb-4 drop-shadow-lg">{event.title}</h1>
-                <div className="flex flex-wrap items-center text-sm text-white/90">
-                  <div className="flex items-center mr-6 mb-2">
-                    <Calendar className="w-5 h-5 mr-2 text-amber-300" />
-                    {new Date(event.date).toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' })}
-                  </div>
-                  <div className="flex items-center mr-6 mb-2">
-                    <MapPin className="w-5 h-5 mr-2 text-amber-300" />
-                    {event.location}
-                  </div>
-                  <div className="flex items-center mb-2">
-                    <Users className="w-5 h-5 mr-2 text-amber-300" />
-                    {event.participants}
-                  </div>
-                </div>
               </div>
               <button 
                 onClick={prevImage} 
@@ -103,7 +86,22 @@ export async function loader({ params }) {
                 <ArrowRight className="w-6 h-6 text-white" />
               </button>
             </div>
-            <div className="p-8">
+            <div className="relative bg-white p-8 -mt-20 mx-4 rounded-xl shadow-lg">
+              <h1 className="text-3xl md:text-4xl font-bold text-slate-800 mb-4">{event.title}</h1>
+              <div className="flex flex-wrap items-center text-sm text-slate-600 mb-4">
+                <div className="flex items-center mr-6 mb-2">
+                  <Calendar className="w-5 h-5 mr-2 text-amber-500" />
+                  {new Date(event.date).toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' })}
+                </div>
+                <div className="flex items-center mr-6 mb-2">
+                  <MapPin className="w-5 h-5 mr-2 text-amber-500" />
+                  {event.location}
+                </div>
+                <div className="flex items-center mb-2">
+                  <Users className="w-5 h-5 mr-2 text-amber-500" />
+                  {event.participants}
+                </div>
+              </div>
               <p className="text-slate-700 mb-8 text-lg leading-relaxed">{event.description}</p>
               <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
                 <div className="bg-slate-100 p-6 rounded-xl shadow-inner">
