@@ -1,6 +1,6 @@
 import React from "react";
 import { useLoaderData, Link } from "react-router-dom";
-import { Calendar,CalendarDays, ArrowRight, MapPin, Users ,ChevronRight } from 'lucide-react';
+import { Calendar,CalendarDays, MapPin, Users ,ChevronRight, ArrowRight, Trophy } from 'lucide-react';
 
 export async function loader() {
   const dataSet = [
@@ -54,14 +54,19 @@ export default function Events() {
   const data = useLoaderData();
 
   return (
-    <div className="bg-gradient-to-br from-blue-50 to-indigo-100 min-h-screen py-16 px-4 sm:px-6 lg:px-8">
+    <div className="bg-gradient-to-br from-slate-100 to-slate-200 min-h-screen py-16 px-4 sm:px-6 lg:px-8">
       <div className="max-w-7xl mx-auto">
-        <h1 className="text-4xl font-extrabold text-center mb-12">
-          <span className="bg-clip-text text-transparent bg-gradient-to-r from-slate-900 via-amber-600 to-slate-600">
-            Sports Events
-          </span>
-        </h1>
-        <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
+        <header className="text-center mb-16">
+          <h1 className="text-5xl font-extrabold mb-4">
+            <span className="bg-clip-text text-transparent bg-gradient-to-r from-slate-900 via-amber-600 to-slate-600">
+              Upcoming Sports Events
+            </span>
+          </h1>
+          <p className="text-slate-600 text-xl max-w-3xl mx-auto">
+            Join us for exciting sports events that showcase talent, foster competition, and bring our community together.
+          </p>
+        </header>
+        <div className="grid gap-12 md:grid-cols-2 lg:grid-cols-3">
           {data.map((event) => (
             <Event key={event._id} {...event} />
           ))}
@@ -73,43 +78,43 @@ export default function Events() {
 
 function Event({ _id, title, description, images, date, location, sport, participants }) {
   return (
-    <div className="bg-white rounded-xl overflow-hidden shadow-lg transition-all duration-300 hover:shadow-2xl hover:scale-105 group">
-      <div className="relative">
+    <div className="bg-white rounded-2xl overflow-hidden shadow-lg transition-all duration-300 hover:shadow-2xl group">
+      <div className="relative h-64">
         <img 
-          className="w-full h-56 object-cover transition-transform duration-300 group-hover:scale-110" 
+          className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-110" 
           src={images[0]} 
           alt={title}
         />
-        <div className="absolute inset-0 bg-gradient-to-t from-black via-black/60 to-transparent opacity-60 transition-opacity duration-300 group-hover:opacity-70"></div>
-        <div className="absolute top-4 left-4 bg-blue-600 text-white text-xs font-bold px-2 py-1 rounded-full">
+        <div className="absolute inset-0 bg-gradient-to-t from-slate-900 via-slate-900/70 to-transparent"></div>
+        <div className="absolute top-4 left-4 bg-amber-500 text-white text-sm font-bold px-3 py-1 rounded-full shadow-lg">
           {sport}
         </div>
         <div className="absolute bottom-4 left-4 right-4">
-          <h2 className="text-xl font-bold text-white truncate group-hover:text-yellow-300 transition-colors duration-300">{title}</h2>
+          <h2 className="text-2xl font-bold text-white truncate group-hover:text-amber-300 transition-colors duration-300">{title}</h2>
         </div>
       </div>
       <div className="p-6">
-        <div className="flex items-center justify-between text-sm text-slate-500 mb-4">
+        <div className="flex items-center justify-between text-sm text-slate-600 mb-4">
           <div className="flex items-center">
-            <Calendar className="w-4 h-4 mr-1 text-blue-500" />
+            <Calendar className="w-5 h-5 mr-2 text-amber-500" />
             {new Date(date).toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' })}
           </div>
           <div className="flex items-center">
-            <MapPin className="w-4 h-4 mr-1 text-pink-500" />
+            <MapPin className="w-5 h-5 mr-2 text-amber-500" />
             {location}
           </div>
         </div>
-        <p className="text-slate-600 text-sm mb-4 line-clamp-3 group-hover:text-slate-800 transition-colors duration-300">
+        <p className="text-slate-700 text-sm mb-4 line-clamp-3 group-hover:text-slate-900 transition-colors duration-300">
           {description}
         </p>
         <div className="flex justify-between items-center">
-          <div className="flex items-center text-sm text-slate-500">
-            <Users className="w-4 h-4 mr-1 text-indigo-500" />
+          <div className="flex items-center text-sm text-slate-600">
+            <Users className="w-5 h-5 mr-2 text-amber-500" />
             {participants}
           </div>
           <Link 
             to={`/events/${_id}`}
-            className="inline-flex items-center text-blue-600 hover:text-blue-800 font-medium text-sm transition-all duration-300 group-hover:translate-x-1 transform"
+            className="inline-flex items-center text-amber-600 hover:text-amber-700 font-semibold text-sm transition-all duration-300 group-hover:translate-x-1"
           >
             View Details
             <ArrowRight className="w-4 h-4 ml-1 transition-transform duration-300 group-hover:translate-x-1" />
