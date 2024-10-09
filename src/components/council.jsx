@@ -1,5 +1,6 @@
 import React from 'react';
 import { useLoaderData } from 'react-router-dom';
+import { Trophy, Award, Users } from 'lucide-react';
 
 export async function loader() {
   const data = [
@@ -77,14 +78,19 @@ export async function loader() {
 export default function Council() {
   const data = useLoaderData();
   return (
-    <div className="bg-gradient-to-br from-blue-50 to-indigo-100 min-h-screen py-16 px-4 sm:px-6 lg:px-8">
+    <div className="bg-gradient-to-br from-slate-100 to-slate-200 min-h-screen py-16 px-4 sm:px-6 lg:px-8">
       <div className="max-w-7xl mx-auto">
-        <h1 className="text-4xl font-extrabold text-center mb-12">
-          <span className="bg-clip-text text-transparent bg-gradient-to-r from-slate-900 via-amber-600 to-slate-600">
-            Sports Council 2024-25
-          </span>
-        </h1>
-        <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
+        <header className="text-center mb-16">
+          <h1 className="text-5xl font-extrabold mb-4">
+            <span className="bg-clip-text text-transparent bg-gradient-to-r from-slate-900 via-amber-600 to-slate-600">
+              Sports Council 2024-25
+            </span>
+          </h1>
+          <p className="text-slate-600 text-xl max-w-3xl mx-auto">
+            Empowering athletes, fostering excellence, and promoting sportsmanship across our campus.
+          </p>
+        </header>
+        <div className="grid gap-12 md:grid-cols-2 lg:grid-cols-3">
           {data.map((sport, index) => (
             <Card key={index} {...sport} />
           ))}
@@ -96,14 +102,17 @@ export default function Council() {
 
 function Card({ sport, players }) {
   return (
-    <div className="bg-white rounded-xl font-titlefont overflow-hidden shadow-lg transition-all duration-300 hover:shadow-2xl hover:scale-105 group">
-      <div className="relative">
-        <div className="absolute inset-0 bg-gradient-to-r from-slate-900 to-amber-900 opacity-70"></div>
-        <div className="p-6 relative flex items-center justify-center">
-          <h2 className="text-2xl font-bold text-white">{sport}</h2>
+    <div className="bg-white rounded-2xl overflow-hidden shadow-lg transition-all duration-300 hover:shadow-2xl group">
+      <div className="relative h-48 bg-gradient-to-r from-slate-800 to-amber-700">
+        <div className="absolute inset-0 opacity-20 bg-pattern"></div>
+        <div className="absolute inset-0 flex items-center justify-center">
+          <Trophy className="w-24 h-24 text-white opacity-20" />
+        </div>
+        <div className="absolute bottom-0 left-0 right-0 p-6">
+          <h2 className="text-3xl font-bold text-white">{sport}</h2>
         </div>
       </div>
-      <div className="p-6 grid gap-8">
+      <div className="p-6 space-y-8">
         {players.map((player, index) => (
           <PlayerCard key={index} {...player} />
         ))}
@@ -114,15 +123,21 @@ function Card({ sport, players }) {
 
 function PlayerCard({ name, image, program, branch }) {
   return (
-    <div className="text-center group bg-gray-50 rounded-lg shadow transition-all duration-300 hover:shadow-lg p-4 font-titlefont">
-      <div className="w-32 h-32 mx-auto mb-4 rounded-full overflow-hidden bg-gradient-to-br from-amber-600 to-slate-900 p-1 transform transition-all duration-300 group-hover:scale-110">
+    <div className="flex items-center space-x-4 group">
+      <div className="flex-shrink-0 w-24 h-24 rounded-full overflow-hidden bg-gradient-to-br from-amber-400 to-slate-700 p-1 shadow-lg transition-all duration-300 group-hover:scale-105">
         <img src={image} alt={name} className="w-full h-full object-cover rounded-full" />
       </div>
-      <h3 className="text-xl font-bold mb-1 text-slate-900 group-hover:text-slate-600 transition-colors duration-300">{name}</h3>
-      <p className="text-sm text-slate-600 mb-1">{program}</p>
-      <p className="text-base font-medium italic text-amber-500 bg-gray-700 rounded-full py-1 px-3 inline-block">
-        {branch}
-      </p>
+      <div className="flex-grow">
+        <h3 className="text-xl font-bold mb-1 text-slate-800 group-hover:text-amber-600 transition-colors duration-300">{name}</h3>
+        <p className="text-sm text-slate-600 mb-2 flex items-center">
+          <Users className="w-4 h-4 mr-1 text-amber-500" />
+          {program}
+        </p>
+        <p className="text-sm font-medium text-slate-700 bg-slate-100 rounded-full py-1 px-3 inline-flex items-center">
+          <Award className="w-4 h-4 mr-1 text-amber-500" />
+          {branch}
+        </p>
+      </div>
     </div>
   );
 }
