@@ -1,6 +1,6 @@
 import React from 'react';
 import { useLoaderData } from 'react-router-dom';
-import { Trophy, Award, Users , Star, ChevronRight} from 'lucide-react';
+import { Trophy, Award, Users , Star, ChevronRight , Mail} from 'lucide-react';
 
 export async function loader() {
   const data = [
@@ -79,14 +79,16 @@ export async function loader() {
         image: "https://i.pinimg.com/736x/22/9d/86/229d8667d47b15d20a9ad459ea2041e0.jpg",
         role: "Honorary President",
         sport: "Basketball",
-        quote: "Talent wins games, but teamwork and intelligence win championships.",
+        email: "michael.jordan@sportscouncil.edu",
+        description: "Legendary basketball player and entrepreneur, bringing decades of sports excellence to guide our council.",
       },
       {
         name: "Simone Biles",
         image: "https://i.pinimg.com/736x/22/9d/86/229d8667d47b15d20a9ad459ea2041e0.jpg",
         role: "Vice President",
         sport: "Gymnastics",
-        quote: "I'm not the next Usain Bolt or Michael Phelps. I'm the first Simone Biles.",
+        email: "simone.biles@sportscouncil.edu",
+        description: "Olympic gold medalist and advocate for athletes' mental health, inspiring the next generation of sports leaders.",
       }
     ],
     sports: data
@@ -127,23 +129,26 @@ export default function Council() {
   );
 }
 
-function FeaturedCard({ name, image, role, sport, quote }) {
+function FeaturedCard({ name, image, role, sport, email, description }) {
   return (
     <div className="bg-white rounded-2xl overflow-hidden shadow-xl transition-all duration-300 hover:shadow-2xl group">
-      <div className="relative h-64">
-        <img src={image} alt={name} className="w-full h-full object-cover" />
-        <div className="absolute inset-0 bg-gradient-to-t from-slate-900 via-slate-900/70 to-transparent"></div>
-        <div className="absolute bottom-0 left-0 right-0 p-6 text-white">
-          <h3 className="text-2xl font-bold mb-1">{name}</h3>
-          <p className="text-amber-400 font-semibold mb-1">{role}</p>
-          <p className="text-slate-300">{sport}</p>
+      <div className="md:flex">
+        <div className="md:w-2/5 relative">
+          <img src={image} alt={name} className="w-full h-64 md:h-full object-cover" />
+          <div className="absolute inset-0 bg-gradient-to-t from-slate-900 via-slate-900/70 to-transparent md:bg-gradient-to-r"></div>
         </div>
-      </div>
-      <div className="p-6">
-        <blockquote className="italic text-slate-600 mb-4">"{quote}"</blockquote>
-        <button className="text-amber-600 font-semibold group-hover:text-amber-700 transition-colors duration-300 flex items-center">
-          Learn More <ChevronRight className="w-4 h-4 ml-1 group-hover:translate-x-1 transition-transform duration-300" />
-        </button>
+        <div className="md:w-3/5 p-6 flex flex-col justify-between">
+          <div>
+            <h3 className="text-2xl font-bold mb-1 text-slate-800">{name}</h3>
+            <p className="text-amber-600 font-semibold mb-1">{role}</p>
+            <p className="text-slate-600 mb-4">{sport}</p>
+            <p className="text-slate-700 mb-4">{description}</p>
+          </div>
+          <div className="flex items-center text-slate-600">
+            <Mail className="w-5 h-5 mr-2 text-amber-500" />
+            <a href={`mailto:${email}`} className="hover:text-amber-600 transition-colors duration-300">{email}</a>
+          </div>
+        </div>
       </div>
     </div>
   );
