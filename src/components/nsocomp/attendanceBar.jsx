@@ -60,7 +60,7 @@ export default function AttendanceNavbar() {
           title="Personal Attendance"
         >
           <User className="w-6 h-6" />
-          <span className="text-xs mt-1 text-center">Personal Attendance</span>
+          <span className="text-[10px] mt-1 text-center">Personal Attendance</span>
         </NavLink>
       </nav>
     </div>
