@@ -24,7 +24,7 @@ export default function AttendanceNavbar() {
           title="Home"
         >
           <Home className="w-6 h-6" />
-          <span className="text-xs mt-1 text-center">Home</span>
+          <span className="text-[10px] mt-1 text-center">Home</span>
         </NavLink>
 
         <NavLink
@@ -33,7 +33,7 @@ export default function AttendanceNavbar() {
           title="Mark Attendance"
         >
           <UserCheck className="w-6 h-6" />
-          <span className="text-xs mt-1 text-center">Mark Attendance</span>
+          <span className="text-[10px] mt-1 text-center">Mark Attendance</span>
         </NavLink>
 
         <NavLink
@@ -42,7 +42,7 @@ export default function AttendanceNavbar() {
           title="View Group Attendance"
         >
           <Users className="w-6 h-6" />
-          <span className="text-xs mt-1 text-center">Sport Attendance</span>
+          <span className="text-[10px] mt-1 text-center">Sport Attendance</span>
         </NavLink>
 
         <NavLink
@@ -51,7 +51,7 @@ export default function AttendanceNavbar() {
           title="Stats"
         >
           <BarChart className="w-6 h-6" />
-          <span className="text-xs mt-1 text-center">Stats</span>
+          <span className="text-[10px] mt-1 text-center">Stats</span>
         </NavLink>
 
         <NavLink
