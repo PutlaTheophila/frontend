@@ -92,7 +92,7 @@ export default function SportStats() {
   console.log(data);
   return (
     <div className="bg-white shadow-md rounded-lg p-6 mt-4 w-full ">
-      <h2 className="text-2xl font-bold mb-4">
+      <h2 className="text-2xl font-bold mb-4 font-titlefont">
         {sport.replace(/-/g, ' ')} Stats for {groupType}
       </h2>
       <div className='' >
