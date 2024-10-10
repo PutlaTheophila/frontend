@@ -49,6 +49,9 @@ import EventDetails from "./components/eventDetails.jsx";
 import {loader as eventDetailsLoader} from "./components/eventDetails.jsx";
 
 
+
+
+
 const router = createBrowserRouter(
   createRoutesFromElements(
       <Route path='/' element={<HomeLayout/>}>
