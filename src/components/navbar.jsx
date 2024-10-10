@@ -11,7 +11,7 @@ export default function Navbar() {
 
   const navItems = [
     { name: 'HOME', path: '/', icon: FaHome },
-    { name: 'PROFILE', path: '/nso', icon: IoMdFitness },
+    { name: 'PLAYER PROFILE', path: '/nso', icon: IoMdFitness },
     { name: 'EVENTS', path: '/events', icon: FaCalendarAlt },
     { name: 'TOURNAMENTS', path: '/tournaments', icon: FaTrophy },
     { name: 'COUNCIL', path: '/council', icon: FaUsers },
@@ -64,8 +64,8 @@ export default function Navbar() {
         </div>
         
         <div className="sm:hidden flex ml-auto items-center">
-          <Link to="/nso" className="font-titlefont font-medium px-3 py-1 rounded-lg bg-slate-900 text-white flex items-center transition duration-300 ease-in-out hover:bg-slate-700">
-            <div>Profile</div>
+          <Link to="/nso" className="font-titlefont font-medium text-[10px] px-3 py-1 rounded-lg bg-slate-900 text-white flex items-center transition duration-300 ease-in-out hover:bg-slate-700">
+            <div>Player Profile</div>
             <FaUserAlt className="ml-2" />
           </Link>
         </div>
