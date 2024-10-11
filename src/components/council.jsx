@@ -83,12 +83,12 @@ export async function loader() {
   return {
     featured: [
       {
-        name: "Michael Jordan",
-        image: "https://i.pinimg.com/736x/22/9d/86/229d8667d47b15d20a9ad459ea2041e0.jpg",
-        role: "Honorary President",
-        sport: "Basketball",
-        email: "michael.jordan@sportscouncil.edu",
-        description: "Legendary basketball player and entrepreneur, bringing decades of sports excellence to guide our council.",
+        name: "Dr.Anurag Singh",
+        image: "https://i.ibb.co/Fxg2v9Z/IMG-20241011-WA0006.jpg",
+        role: "Faculty Incharge",
+        sport: "Faculty",
+        email: "anurags@iitbhilai.ac.in",
+        description: "Dr. Anurag Singh, the Faculty Incharge of Sports at IIT Bhilai, is instrumental in promoting and managing sports initiatives within the institute. He fosters a vibrant sports culture by encouraging student participation and excellence in athletics. Dr. Singh's leadership inspires teamwork, discipline, and healthy competition, significantly contributing to the overall development of the student community at IIT Bhilai.",
       },
       {
         name: "Aditya Prakash",
