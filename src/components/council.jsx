@@ -84,7 +84,7 @@ export async function loader() {
     featured: [
       {
         name: "Dr.Anurag Singh",
-        image: "https://i.ibb.co/Fxg2v9Z/IMG-20241011-WA0006.jpg",
+        image: "https://i.ibb.co/Mf7r8vM/anurag.jpg",
         role: "Faculty Incharge",
         sport: "Faculty",
         email: "anurags@iitbhilai.ac.in",
