@@ -3,59 +3,66 @@ import { useLoaderData } from 'react-router-dom';
 import { Trophy, Award, Users , Star, ChevronRight , Mail} from 'lucide-react';
 
 export async function loader() {
-  const data = [
-    {
-      sport: "Basketball",
-      players: [
-        {
-          name: "LeBron James",
-          image: "https://i.ibb.co/JKZrVJL/Gajanand-Kumawat.jpg",
-          program: "Sports Science",
-          branch: "Strive for greatness.",
-        },
-        {
-          name: "Stephen Curry",
-          image: "https://i.ibb.co/JKZrVJL/Gajanand-Kumawat.jpg",
-          program: "Business Management",
-          branch: "Be the best shooter.",
-        },
-      ],
-    },
-    {
-      sport: "Soccer",
-      players: [
-        {
-          name: "Lionel Messi",
-          image: "https://i.pinimg.com/736x/22/9d/86/229d8667d47b15d20a9ad459ea2041e0.jpg",
-          program: "Sports Medicine",
-          branch: "The greatest of all time.",
-        },
-        {
-          name: "Cristiano Ronaldo",
-          image: "https://i.pinimg.com/736x/cd/4f/59/cd4f590f83a5be0270f373ea2f6247cf.jpg",
-          program: "Physical Education",
-          branch: "Work hard, play hard.",
-        },
-      ],
-    },
-    {
-      sport: "Tennis",
-      players: [
-        {
-          name: "Serena Williams",
-          image: "https://i.pinimg.com/736x/22/9d/86/229d8667d47b15d20a9ad459ea2041e0.jpg",
-          program: "Nutrition Science",
-          branch: "Champion mentality.",
-        },
-        {
-          name: "Roger Federer",
-          image: "https://i.pinimg.com/736x/cd/4f/59/cd4f590f83a5be0270f373ea2f6247cf.jpg",
-          program: "Sports Management",
-          branch: "Elegance on and off court.",
-        },
-      ],
-    },
-  ];
+
+
+  const res = await fetch(`https://terabyte-kvey.onrender.com/api/v1/coordinators`, {
+      method: 'GET',
+      credentials: 'include',
+  });
+  const data = await res.json();
+  // const data = [
+  //   {
+  //     sport: "Basketball",
+  //     players: [
+  //       {
+  //         name: "LeBron James",
+  //         image: "https://i.ibb.co/JKZrVJL/Gajanand-Kumawat.jpg",
+  //         program: "Sports Science",
+  //         branch: "Strive for greatness.",
+  //       },
+  //       {
+  //         name: "Stephen Curry",
+  //         image: "https://i.ibb.co/JKZrVJL/Gajanand-Kumawat.jpg",
+  //         program: "Business Management",
+  //         branch: "Be the best shooter.",
+  //       },
+  //     ],
+  //   },
+  //   {
+  //     sport: "Soccer",
+  //     players: [
+  //       {
+  //         name: "Lionel Messi",
+  //         image: "https://i.pinimg.com/736x/22/9d/86/229d8667d47b15d20a9ad459ea2041e0.jpg",
+  //         program: "Sports Medicine",
+  //         branch: "The greatest of all time.",
+  //       },
+  //       {
+  //         name: "Cristiano Ronaldo",
+  //         image: "https://i.pinimg.com/736x/cd/4f/59/cd4f590f83a5be0270f373ea2f6247cf.jpg",
+  //         program: "Physical Education",
+  //         branch: "Work hard, play hard.",
+  //       },
+  //     ],
+  //   },
+  //   {
+  //     sport: "Tennis",
+  //     players: [
+  //       {
+  //         name: "Serena Williams",
+  //         image: "https://i.pinimg.com/736x/22/9d/86/229d8667d47b15d20a9ad459ea2041e0.jpg",
+  //         program: "Nutrition Science",
+  //         branch: "Champion mentality.",
+  //       },
+  //       {
+  //         name: "Roger Federer",
+  //         image: "https://i.pinimg.com/736x/cd/4f/59/cd4f590f83a5be0270f373ea2f6247cf.jpg",
+  //         program: "Sports Management",
+  //         branch: "Elegance on and off court.",
+  //       },
+  //     ],
+  //   },
+  // ];
 
   const preloadImage = (url) => {
     return new Promise((resolve, reject) => {
