@@ -91,12 +91,12 @@ export async function loader() {
         description: "Legendary basketball player and entrepreneur, bringing decades of sports excellence to guide our council.",
       },
       {
-        name: "Simone Biles",
-        image: "https://i.pinimg.com/736x/22/9d/86/229d8667d47b15d20a9ad459ea2041e0.jpg",
-        role: "Vice President",
-        sport: "Gymnastics",
-        email: "simone.biles@sportscouncil.edu",
-        description: "Olympic gold medalist and advocate for athletes' mental health, inspiring the next generation of sports leaders.",
+        name: "Aditya Prakash",
+        image: "https://i.ibb.co/pdK1C40/Aditya-Prakash.webp",
+        role: "General Secretary Of Sports",
+        sport: "Student",
+        email: "adityaparkash@iitbhilai.ac.in",
+        description: "Meet Aditya Prakash, a third-year undergraduate student pursuing a B.Tech at IIT Bhilai. As the General Secretary of Sports, he plays a pivotal role in leading and organizing various sporting activities and events across the institute. With a passion for both academics and athletics, Aditya Prakash strives to foster a vibrant and inclusive sports culture on campus. His leadership and dedication inspire fellow students to participate, compete, and excel in different sports. Always ready to take on challenges, Aditya Prakash is a true representative of the dynamic and enthusiastic spirit of IIT Bhilai!",
       }
     ],
     sports: data
