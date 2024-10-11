@@ -109,7 +109,7 @@ export default function Council() {
     <div className="bg-gradient-to-br from-slate-100 to-slate-200 min-h-screen py-16 px-4 sm:px-6 lg:px-8">
       <div className="max-w-7xl mx-auto">
         <header className="text-center mb-16">
-          <h1 className="text-5xl font-extrabold mb-4">
+          <h1 className="text-4xl font-extrabold mb-4">
             <span className="bg-clip-text text-transparent bg-gradient-to-r from-slate-900 via-amber-600 to-slate-600">
               Sports Council 2024-25
             </span>
@@ -190,6 +190,7 @@ function PlayerCard({ name, image, program, branch }) {
         <img src={image} alt={name} className="w-full h-full object-cover rounded-full" />
       </div>
       <div className="flex-grow">
+        <div className='flex items-center justify-start'>
         <h3 className="text-xl font-bold mb-1 text-slate-800 group-hover:text-amber-600 transition-colors duration-300">{name}</h3>
         <p className="text-sm text-slate-600 mb-2 flex items-center">
           <Users className="w-4 h-4 mr-1 text-amber-500" />
@@ -199,6 +200,7 @@ function PlayerCard({ name, image, program, branch }) {
           <Award className="w-4 h-4 mr-1 text-amber-500" />
           {branch}
         </p>
+        </div>
       </div>
     </div>
   );
