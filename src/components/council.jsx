@@ -143,7 +143,7 @@ function FeaturedCard({ name, image, role, sport, email, description }) {
       <div className="md:flex">
         <div className="md:w-2/5 relative">
           <img src={image} alt={name} className="w-full h-64 md:h-full object-cover" />
-          <div className="absolute inset-0 bg-gradient-to-t from-slate-500 via-slate-900/70 to-transparent md:bg-gradient-to-r"></div>
+          <div className="absolute inset-0 bg-gradient-to-t from-slate-900 via-slate-900/70 to-transparent md:bg-gradient-to-t"></div>
         </div>
         <div className="md:w-3/5 p-6 flex flex-col justify-between">
           <div>
