@@ -190,7 +190,7 @@ function PlayerCard({ name, image, program, branch }) {
         <img src={image} alt={name} className="w-full h-full object-cover rounded-full" />
       </div>
       <div className="flex-grow">
-        <div className='flex items-center justify-center'>
+        <div className='flex-col items-center justify-center'>
         <h3 className="text-xl font-bold mb-1 text-slate-800 group-hover:text-amber-600 transition-colors duration-300">{name}</h3>
         <p className="text-sm text-slate-600 mb-2 flex items-center">
           <Users className="w-4 h-4 mr-1 text-amber-500" />
