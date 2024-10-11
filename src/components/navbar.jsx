@@ -64,7 +64,7 @@ export default function Navbar() {
         </div>
         
         <div className="sm:hidden flex ml-auto items-center">
-          <Link to="/nso" className="font-titlefont font-medium text-[10px] px-3 py-3 rounded-lg bg-slate-900 text-white flex items-center transition duration-300 ease-in-out hover:bg-slate-700">
+          <Link to="/nso" className="font-titlefont font-medium text-[11px] px-3 py-3 rounded-lg bg-slate-900 text-white flex items-center transition duration-300 ease-in-out hover:bg-slate-700">
             <div>Player Profile</div>
             <FaUserAlt className="ml-2" />
           </Link>
