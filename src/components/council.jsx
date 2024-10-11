@@ -96,7 +96,7 @@ export async function loader() {
         role: "General Secretary Of Sports",
         sport: "Student",
         email: "adityaparkash@iitbhilai.ac.in",
-        description: "Meet Aditya Prakash, a third-year undergraduate student pursuing a B.Tech at IIT Bhilai. As the General Secretary of Sports, he plays a pivotal role in leading and organizing various sporting activities and events across the institute. With a passion for both academics and athletics, Aditya Prakash strives to foster a vibrant and inclusive sports culture on campus. His leadership and dedication inspire fellow students to participate, compete, and excel in different sports. Always ready to take on challenges, Aditya Prakash is a true representative of the dynamic and enthusiastic spirit of IIT Bhilai!",
+        description: "Meet Aditya Prakash, a third-year B.Tech student at IIT Bhilai and the General Secretary of Sports. He plays a key role in organizing and promoting sports activities across the institute. With a passion for both academics and athletics, Aditya works to foster an inclusive sports culture, inspiring fellow students to participate and excel. His leadership reflects the dynamic and enthusiastic spirit of IIT Bhilai!",
       }
     ],
     sports: data
