@@ -106,7 +106,7 @@ export async function loader() {
 export default function Council() {
   const { featured, sports } = useLoaderData();
   return (
-    <div className="bg-gradient-to-br from-slate-100 to-slate-200 min-h-screen py-16 px-4 sm:px-6 lg:px-8">
+    <div className="bg-gradient-to-br from-slate-100 to-slate-200 min-h-screen py-16 px-4 sm:px-6 lg:px-8 font-titlefont">
       <div className="max-w-7xl mx-auto">
         <header className="text-center mb-16">
           <h1 className="text-4xl font-extrabold mb-4">
@@ -147,14 +147,14 @@ function FeaturedCard({ name, image, role, sport, email, description }) {
         </div>
         <div className="md:w-3/5 p-6 flex flex-col justify-between">
           <div>
-            <h3 className="text-2xl font-bold mb-1 text-slate-800">{name}</h3>
-            <p className="text-amber-600 font-semibold mb-1">{role}</p>
-            <p className="text-slate-600 mb-4">{sport}</p>
-            <p className="text-slate-700 mb-4">{description}</p>
+            <h3 className="text-2xl font-bold mb-1 text-slate-800 font-titlefont">{name}</h3>
+            <p className="text-amber-600 font-semibold mb-1 font-titlefont">{role}</p>
+            <p className="text-slate-600 mb-4 font-titlefont">{sport}</p>
+            <p className="text-slate-700 mb-4 font-titlefont">{description}</p>
           </div>
           <div className="flex items-center text-slate-600">
             <Mail className="w-5 h-5 mr-2 text-amber-500" />
-            <a href={`mailto:${email}`} className="hover:text-amber-600 transition-colors duration-300">{email}</a>
+            <a href={`mailto:${email}`} className="hover:text-amber-600 transition-colors duration-300 font-titlefont">{email}</a>
           </div>
         </div>
       </div>
@@ -164,7 +164,7 @@ function FeaturedCard({ name, image, role, sport, email, description }) {
 
 function Card({ sport, players }) {
   return (
-    <div className="bg-white rounded-2xl overflow-hidden shadow-lg transition-all duration-300 hover:shadow-2xl group">
+    <div className="bg-white rounded-2xl overflow-hidden shadow-lg transition-all duration-300 hover:shadow-2xl group font-titlefont">
       <div className="relative h-48 bg-gradient-to-r from-slate-800 to-amber-700">
         <div className="absolute inset-0 opacity-20 bg-pattern"></div>
         <div className="absolute inset-0 flex items-center justify-center">
@@ -186,17 +186,17 @@ function Card({ sport, players }) {
 function PlayerCard({ name, image, program, branch }) {
   return (
     <div className="flex items-center space-x-4 group">
-      <div className="flex-shrink-0 w-24 h-24 rounded-full overflow-hidden bg-gradient-to-br from-amber-400 to-slate-700 p-1 shadow-lg transition-all duration-300 group-hover:scale-105">
+      <div className="flex-shrink-0 w-24 h-24 rounded-full overflow-hidden bg-gradient-to-br from-amber-400 to-slate-700 p-1 shadow-lg transition-all duration-300 group-hover:scale-105 font-titlefont">
         <img src={image} alt={name} className="w-full h-full object-cover rounded-full" />
       </div>
       <div className="flex-grow">
         <div className='flex-col items-center justify-center'>
-        <h3 className="text-xl font-bold mb-1 text-slate-800 group-hover:text-amber-600 transition-colors duration-300">{name}</h3>
-        <p className="text-sm text-slate-600 mb-2 flex items-center">
+        <h3 className="text-xl font-bold mb-1 text-slate-800 group-hover:text-amber-600  font-titlefont transition-colors duration-300">{name}</h3>
+        <p className="text-sm text-slate-600 mb-2 flex items-center font-titlefont">
           <Users className="w-4 h-4 mr-1 text-amber-500" />
           {program}
         </p>
-        <p className="text-sm font-medium text-slate-700 bg-slate-100 rounded-full py-1 px-3 inline-flex items-center">
+        <p className="text-sm font-medium text-slate-700 bg-slate-100 rounded-full py-1 px-3 inline-flex  font-titlefont items-center">
           <Award className="w-4 h-4 mr-1 text-amber-500" />
           {branch}
         </p>
