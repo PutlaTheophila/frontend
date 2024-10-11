@@ -9,7 +9,8 @@ export async function loader() {
       method: 'GET',
       credentials: 'include',
   });
-  const data = await res.json();
+  const response = await res.json();
+  const data = response.data;
   // const data = [
   //   {
   //     sport: "Basketball",
