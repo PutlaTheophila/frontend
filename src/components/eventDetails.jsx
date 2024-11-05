@@ -8,29 +8,10 @@ export async function loader({ params }) {
   const res = await fetch(`https://terabyte-kvey.onrender.com/api/v1/events/${id}`, {
     method: 'GET',
     credentials: 'include'
-});
-const data = await res.json();
-const eventData = data.event;
-// return data;
+  });
+  const data = await res.json();
+  const eventData = data.event;
 
-//   const eventData = {
-//     _id: params.id,
-//     title: "Annual Inter-College Basketball Tournament",
-//     description: "Join us for the most anticipated basketball tournament of the year, featuring top teams from colleges across the region. This high-energy event will showcase the best of collegiate basketball, with intense competition, skillful plays, and the spirit of sportsmanship.",
-//     images: [
-//       "https://content.jdmagicbox.com/comp/durg/x8/9999px788.x788.230827173524.x7x8/catalogue/indian-institute-of-technology-bhilai-jeora-sirsa-durg-iit-sypb5mw9px.jpg",
-//       "https://pbs.twimg.com/media/FWj41NGaIAEJvhK?format=jpg&name=4096x4096",
-//       "https://polaris.iitbhilai.ac.in/public/images/life/life_23.jpg"
-//     ],
-//     date: "2024-03-15",
-//     location: "University Sports Complex",
-//     sport: "Basketball",
-//     participants: "8 college teams",
-//     schedule: "Preliminary rounds: March 15-16, Semi-finals: March 17, Finals: March 18",
-//     organizer: "Inter-Collegiate Sports Committee",
-//   };
-
-  // Preload all images
   const preloadImages = async (imageUrls) => {
     const imagePromises = imageUrls.map((url) => {
       return new Promise((resolve, reject) => {
@@ -70,24 +51,24 @@ export default function EventDetails() {
     <div className="bg-gradient-to-br from-slate-100 to-slate-200 min-h-screen py-16 px-4 sm:px-6 lg:px-8">
       <div className="max-w-5xl mx-auto">
         <div className="bg-white rounded-2xl shadow-xl overflow-hidden">
-          <div className="relative h-[28rem] md:h-[32rem]">
-            <img 
-              className="w-full h-full object-cover" 
-              src={event.images[currentImageIndex]} 
+          <div className="relative h-[32rem] md:h-[40rem]">
+            <img
+              className="w-full h-full object-cover object-center"
+              src={event.images[currentImageIndex]}
               alt={`${event.title} - Image ${currentImageIndex + 1}`}
             />
             <div className="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-slate-900/80"></div>
             <div className="absolute top-4 left-4 bg-amber-500 text-white text-sm font-bold px-4 py-2 rounded-full shadow-lg">
               {event.sport}
             </div>
-            <button 
-              onClick={prevImage} 
+            <button
+              onClick={prevImage}
               className="absolute left-4 top-1/2 transform -translate-y-1/2 bg-white/20 hover:bg-white/40 rounded-full p-3 transition-colors duration-300"
             >
               <ArrowLeft className="w-6 h-6 text-white" />
             </button>
-            <button 
-              onClick={nextImage} 
+            <button
+              onClick={nextImage}
               className="absolute right-4 top-1/2 transform -translate-y-1/2 bg-white/20 hover:bg-white/40 rounded-full p-3 transition-colors duration-300"
             >
               <ArrowRight className="w-6 h-6 text-white" />
@@ -139,16 +120,16 @@ export default function EventDetails() {
               </ul>
             </div>
             <div className="flex justify-between items-center">
-              <Link 
+              <Link
                 to="/events"
                 className="inline-flex items-center text-amber-600 hover:text-amber-700 font-medium transition-colors duration-300"
               >
                 <ChevronLeft className="w-5 h-5 mr-1" />
                 Back to Events
               </Link>
-              <button className="px-8 py-3 bg-amber-500 text-white font-bold rounded-full hover:bg-amber-600 transition-all duration-300 transform hover:scale-105 shadow-lg">
+              {/* <button className="px-8 py-3 bg-amber-500 text-white font-bold rounded-full hover:bg-amber-600 transition-all duration-300 transform hover:scale-105 shadow-lg">
                 Register Now
-              </button>
+              </button> */}
             </div>
           </div>
         </div>
