@@ -4,22 +4,31 @@ import { ArrowLeft, ArrowRight, Calendar, MapPin, Users, Clock, Award, Star, Che
 
 export async function loader({ params }) {
   // Mock data for event details
-  const eventData = {
-    _id: params.id,
-    title: "Annual Inter-College Basketball Tournament",
-    description: "Join us for the most anticipated basketball tournament of the year, featuring top teams from colleges across the region. This high-energy event will showcase the best of collegiate basketball, with intense competition, skillful plays, and the spirit of sportsmanship.",
-    images: [
-      "https://content.jdmagicbox.com/comp/durg/x8/9999px788.x788.230827173524.x7x8/catalogue/indian-institute-of-technology-bhilai-jeora-sirsa-durg-iit-sypb5mw9px.jpg",
-      "https://pbs.twimg.com/media/FWj41NGaIAEJvhK?format=jpg&name=4096x4096",
-      "https://polaris.iitbhilai.ac.in/public/images/life/life_23.jpg"
-    ],
-    date: "2024-03-15",
-    location: "University Sports Complex",
-    sport: "Basketball",
-    participants: "8 college teams",
-    schedule: "Preliminary rounds: March 15-16, Semi-finals: March 17, Finals: March 18",
-    organizer: "Inter-Collegiate Sports Committee",
-  };
+  const id = params.id;
+  const res = await fetch(`https://terabyte-kvey.onrender.com/api/v1/events/${id}`, {
+    method: 'GET',
+    credentials: 'include'
+});
+const data = await res.json();
+const eventData = data.event;
+// return data;
+
+//   const eventData = {
+//     _id: params.id,
+//     title: "Annual Inter-College Basketball Tournament",
+//     description: "Join us for the most anticipated basketball tournament of the year, featuring top teams from colleges across the region. This high-energy event will showcase the best of collegiate basketball, with intense competition, skillful plays, and the spirit of sportsmanship.",
+//     images: [
+//       "https://content.jdmagicbox.com/comp/durg/x8/9999px788.x788.230827173524.x7x8/catalogue/indian-institute-of-technology-bhilai-jeora-sirsa-durg-iit-sypb5mw9px.jpg",
+//       "https://pbs.twimg.com/media/FWj41NGaIAEJvhK?format=jpg&name=4096x4096",
+//       "https://polaris.iitbhilai.ac.in/public/images/life/life_23.jpg"
+//     ],
+//     date: "2024-03-15",
+//     location: "University Sports Complex",
+//     sport: "Basketball",
+//     participants: "8 college teams",
+//     schedule: "Preliminary rounds: March 15-16, Semi-finals: March 17, Finals: March 18",
+//     organizer: "Inter-Collegiate Sports Committee",
+//   };
 
   // Preload all images
   const preloadImages = async (imageUrls) => {
