@@ -65,7 +65,7 @@ export default function Events() {
         <header className="text-center mb-16">
           <h1 className="text-5xl font-extrabold mb-4">
             <span className="bg-clip-text text-transparent bg-gradient-to-r from-slate-900 via-amber-600 to-slate-600">
-              Upcoming Sports Events
+              Sports Events
             </span>
           </h1>
           <p className="text-slate-600 text-xl max-w-3xl mx-auto">
