@@ -43,16 +43,17 @@ export default function Navbar() {
         >
           {!display ? <RxHamburgerMenu /> : <CgClose />}
         </button>
-
         <div className="flex items-center font-myfont text-lg sm:text-xl lg:text-2xl font-extrabold tracking-wide text-slate-900">
-          <img 
-            src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSbfsLOxQwx7k6_Pg6Uz6UbQaWFPDJi6rbtnA&s" // Replace with the actual path or URL of your logo
-            alt="College Logo"
-            className="mr-2 sm:mr-3 h-8 w-8 rounded-full" 
-            loading="lazy"// Adjust size as needed
-          />
-          <div className="tracking-wider">IIT BHILAI</div>
-        </div>
+  <img 
+    src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSbfsLOxQwx7k6_Pg6Uz6UbQaWFPDJi6rbtnA&s" // Replace with the actual path or URL of your logo
+    alt="College Logo"
+    className="mr-2 sm:mr-3 h-10 w-10 sm:h-12 sm:w-12 lg:h-14 lg:w-14 rounded-full object-cover" 
+    loading="lazy"
+  />
+  <div className="tracking-wider">IIT BHILAI</div>
+</div>
+
+
 
         
         <div className="sm:hidden flex ml-auto items-center">
