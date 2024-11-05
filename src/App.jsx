@@ -54,24 +54,6 @@ import {loader as eventDetailsLoader} from "./components/eventDetails.jsx";
 
 
 
-// const LoadingSpinner = () => {
-//   const navigation = useNavigation();
-//   const isLoading = navigation.state === "loading";
-
-//   if (!isLoading) return null;
-
-//   return (
-//     <div className="fixed inset-0 bg-black/20 backdrop-blur-sm z-50 flex items-center justify-center">
-//       <div className="bg-white rounded-lg p-4 shadow-xl flex flex-col items-center gap-2">
-//         <div className="w-12 h-12 border-4 border-blue-600 border-t-transparent rounded-full animate-spin"></div>
-//         <p className="text-gray-700 font-medium">Loading...</p>
-//       </div>
-//     </div>
-//   );
-// };
-
-
-
 const LoadingSpinner = () => {
   const navigation = useNavigation();
   const isLoading = navigation.state === "loading";
