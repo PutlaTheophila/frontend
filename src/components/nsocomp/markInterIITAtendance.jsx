@@ -44,6 +44,7 @@ const Loader = ({ message }) => (
 
 const InterIITAttendance = () => {
   const response = useLoaderData();
+  console.log(response);
   const sport = response.sport;
   const revalidator = useRevalidator();
 
