@@ -98,7 +98,7 @@ const router = createBrowserRouter(
         <Route path="/nso" loader={nsoLoader} element={<NsoLayout/>}>
             <Route index element={<Nso/>}/>
             <Route path="/nso/mark-attendance" loader={markAttendanceLayoutLoader} element={<MarkAttendanceLayout/>}>
-              <Route path="/nso/mark-attendance/nso-attendance" loader = {markNsoAttendanceLoader} element={<NsoAttendance/>}/>
+              <Route path="/nso/mark-attendance/nso-attendance/:sport" loader = {markNsoAttendanceLoader} element={<NsoAttendance/>}/>
               <Route path="/nso/mark-attendance/interiit-attendance/:sport" loader={InterIITAttendanceLoader} element={<InterIITAttendance/>}/>
             </Route>
             <Route path="/nso/personal-attendance" loader={PersonalAttendanceLayoutLoader} element = {<PersonalAttendanceLayout/>}>
