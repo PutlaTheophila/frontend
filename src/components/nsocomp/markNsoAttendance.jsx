@@ -1,28 +1,25 @@
 import React, { useState, useEffect, useMemo } from "react";
 import { useLoaderData, useRevalidator } from "react-router-dom";
 
-export async function loader({params}) {
+export async function loader({ params }) {
   const sport = params?.sport || null;
-  console.log('dfg',sport)
+  console.log('dfg', sport);
   const res = await fetch(`https://terabyte-kvey.onrender.com/api/v1/attendance/nso/players/${sport}`, {
     method: 'GET',
     credentials: 'include'
   });
   const data = await res.json();
-  console.log('nso students',data);
-  return {
-    data,
-    sport
-  };
+  console.log('nso students', data);
+  return { data, sport };
 }
 
 const FloatingWindow = ({ message, onClose }) => {
   useEffect(() => {
     const timer = setTimeout(() => {
-      onClose()
-    }, 3000)
-    return () => clearTimeout(timer)
-  }, [onClose])
+      onClose();
+    }, 3000);
+    return () => clearTimeout(timer);
+  }, [onClose]);
 
   return (
     <div className="fixed inset-0 flex items-center justify-center z-50">
@@ -31,8 +28,8 @@ const FloatingWindow = ({ message, onClose }) => {
         <p className="font-semibold text-center">{message}</p>
       </div>
     </div>
-  )
-}
+  );
+};
 
 const Loader = ({ message }) => (
   <div className="fixed inset-0 flex items-center justify-center z-50">
@@ -57,6 +54,13 @@ const NSOAttendance = () => {
   const [selectedStudents, setSelectedStudents] = useState([]);
   const [showSuccess, setShowSuccess] = useState(false);
   const [isSubmitting, setIsSubmitting] = useState(false);
+  const [searchTerm, setSearchTerm] = useState("");
+
+  const filteredStudents = useMemo(() => {
+    return students.filter(student =>
+      student.name.toLowerCase().includes(searchTerm.toLowerCase())
+    );
+  }, [students, searchTerm]);
 
   const handleCheckboxChange = (student) => {
     const studentWithSport = { ...student, sport };
@@ -67,12 +71,12 @@ const NSOAttendance = () => {
         return [...prevSelected, studentWithSport];
       }
     });
-  }
+  };
 
   const handleSubmit = async () => {
     setIsSubmitting(true);
     try {
-      const res = await fetch(`https://terabyte-kvey.onrender.com/api/v1/attendance/nso`, {
+      const res = await fetch('https://terabyte-kvey.onrender.com/api/v1/attendance/nso', {
         method: 'POST',
         credentials: 'include',
         headers: {
@@ -91,7 +95,7 @@ const NSOAttendance = () => {
     } finally {
       setIsSubmitting(false);
     }
-  }
+  };
 
   return (
     <div className="flex flex-col min-h-screen bg-slate-50">
@@ -99,12 +103,16 @@ const NSOAttendance = () => {
         <div className="w-full max-w-4xl bg-white rounded-lg shadow-lg border border-slate-200 overflow-hidden">
           <div className="p-6">
             <h2 className="text-2xl font-bold mb-6 text-slate-900">Select Students for NSO {sport ? `- ${sport}` : ''}</h2>
+            <input
+              type="text"
+              placeholder="Search students..."
+              value={searchTerm}
+              onChange={(e) => setSearchTerm(e.target.value)}
+              className="w-full px-3 py-2 mb-4 border border-slate-300 rounded-md focus:outline-none focus:ring-2 focus:ring-slate-500"
+            />
             <div className="space-y-3 max-h-[60vh] overflow-y-auto mb-6 pr-2">
-              {students.map(student => (
-                <div 
-                  key={student.id} 
-                  className="flex items-center p-3 rounded-md transition-colors duration-200 bg-slate-50 hover:bg-slate-100"
-                >
+              {filteredStudents.map(student => (
+                <div key={student.id} className="flex items-center p-3 rounded-md transition-colors duration-200 bg-slate-50 hover:bg-slate-100">
                   <input
                     type="checkbox"
                     id={student.id}
@@ -112,10 +120,7 @@ const NSOAttendance = () => {
                     onChange={() => handleCheckboxChange(student)}
                     className="w-5 h-5 rounded focus:ring-slate-500 text-slate-900 bg-slate-100 border-slate-300"
                   />
-                  <label 
-                    htmlFor={student.id} 
-                    className="ml-3 flex-grow text-slate-900"
-                  >
+                  <label htmlFor={student.id} className="ml-3 flex-grow text-slate-900">
                     <span className="text-sm font-medium">{student.name}</span>
                     <span className="ml-2 text-xs text-slate-500">ID: {student.id}</span>
                   </label>
@@ -135,13 +140,10 @@ const NSOAttendance = () => {
       {isSubmitting && <Loader message="Submitting..." />}
       {revalidator.state === "loading" && <Loader message="Updating..." />}
       {showSuccess && (
-        <FloatingWindow
-          message="Attendance submitted successfully!"
-          onClose={() => setShowSuccess(false)}
-        />
+        <FloatingWindow message="Attendance submitted successfully!" onClose={() => setShowSuccess(false)} />
       )}
     </div>
   );
-}
+};
 
 export default NSOAttendance;
